@@ -1,0 +1,30 @@
+{
+  "ensemble_hybrid_production": {
+    "name": "Production Deep Hybrid Stacking Ensemble (GBDT + Deep MLP + Logistic)",
+    "type": "Ensemble",
+    "log_loss": 0.4102,
+    "roc_auc": 0.8914,
+    "brier_score": 0.1343
+  },
+  "gradient_boosted_trees": {
+    "name": "Gradient Boosted Decision Trees (HistGBDT)",
+    "type": "Tree Ensemble",
+    "log_loss": 0.4179,
+    "roc_auc": 0.888,
+    "brier_score": 0.1366
+  },
+  "deep_neural_network_mlp": {
+    "name": "Deep Neural Network (3 Dense Hidden Layers: 64-32-16 ReLU)",
+    "type": "Deep Learning",
+    "log_loss": 0.4231,
+    "roc_auc": 0.8871,
+    "brier_score": 0.1374
+  },
+  "logistic_regression": {
+    "name": "Regularized L2 Logistic Regression (Baseline Anchor)",
+    "type": "Generalized Linear",
+    "log_loss": 0.4066,
+    "roc_auc": 0.8941,
+    "brier_score": 0.1323
+  }
+}

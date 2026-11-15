@@ -46,12 +46,17 @@ def run_full_pipeline(
     print(f"Features engineered for {len(feat_df):,} deliveries. Columns: {len(feat_df.columns)}")
 
     print("\n" + "=" * 70)
-    print("STEP 3: TRAINING WIN PROBABILITY MODELS & COMPUTING WPA")
+    print("STEP 3: TRAINING WIN PROBABILITY ML/DL ENSEMBLE & COMPUTING WPA")
     print("=" * 70)
     wp_engine = WinProbabilityEngine(random_state=42)
     wp_engine.fit_inn1_par_model(feat_df)
     wp_engine.fit_inn2_model(feat_df)
-    print("Win Probability Validation Metrics (5-Fold Match CV):", wp_engine.metrics)
+    print("Production ML/DL Ensemble Metrics:", wp_engine.metrics)
+    print("Model Comparison Benchmarks:")
+    for m_key, m_val in wp_engine.model_comparison.items():
+        print(f"  • {m_val['name']:65s} | Log-Loss: {m_val['log_loss']} | ROC-AUC: {m_val['roc_auc']} | Brier: {m_val['brier_score']}")
+    with open(os.path.join(artifacts_dir, "ml_models_benchmark.json"), "w") as f:
+        json.dump(wp_engine.model_comparison, f, indent=2)
     wpa_df = wp_engine.compute_wpa_for_dataframe(feat_df)
 
     print("\n" + "=" * 70)
@@ -146,6 +151,7 @@ def run_full_pipeline(
         "sensitivity": sensitivity_res,
         "bootstrap": bootstrap_res,
         "wp_metrics": wp_engine.metrics,
+        "model_comparison": wp_engine.model_comparison,
     }
     with open(os.path.join(artifacts_dir, "validation_summary.json"), "w") as f:
         json.dump(val_summary, f, indent=2)

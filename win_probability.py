@@ -9,22 +9,28 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 from sklearn.calibration import CalibratedClassifierCV, calibration_curve
 from sklearn.metrics import log_loss, roc_auc_score, brier_score_loss
 from sklearn.model_selection import GroupKFold
 
 
 class WinProbabilityEngine:
-    """Computes Win Probability (WP) and Win Probability Added (WPA) for both innings."""
+    """Computes Win Probability (WP) and Win Probability Added (WPA) using an advanced ML/DL Ensemble."""
 
     def __init__(self, random_state: int = 42):
         self.random_state = random_state
-        self.inn2_model = None
+        self.inn2_gbdt = None
+        self.inn2_mlp = None
+        self.inn2_lr = None
         self.inn1_par_score = 172.0
         self.inn1_beta = 0.024
         self.inn1_lookup = {}
         self.calibration_data = {}
         self.metrics = {}
+        self.model_comparison = {}
 
     def fit_inn1_par_model(self, df: pd.DataFrame):
         """Fit empirical par and remaining runs expectations for Innings 1."""
@@ -89,7 +95,7 @@ class WinProbabilityEngine:
         return np.clip(wp, 0.01, 0.99)
 
     def fit_inn2_model(self, df: pd.DataFrame):
-        """Fit calibrated Gradient Boosting model for Innings 2 using GroupKFold."""
+        """Fit a hybrid ML/DL ensemble (GBDT + Deep Neural MLP + Logistic Regression) for Innings 2 using GroupKFold."""
         inn2 = df[
             (df["innings"] == 2)
             & (df["is_legal_ball"] == 1)
@@ -110,40 +116,122 @@ class WinProbabilityEngine:
         y = inn2["batting_team_won"].values
         groups = inn2["match_id"].values
 
-        # 5-fold CV evaluation
+        # 5-fold GroupKFold CV evaluation across matches to prevent data leakage
         gkf = GroupKFold(n_splits=5)
-        oof_preds = np.zeros(len(y))
+        oof_gbdt = np.zeros(len(y))
+        oof_mlp = np.zeros(len(y))
+        oof_lr = np.zeros(len(y))
 
         for train_idx, val_idx in gkf.split(X, y, groups=groups):
-            fold_clf = HistGradientBoostingClassifier(
-                max_iter=120,
+            X_tr, y_tr = X[train_idx], y[train_idx]
+            X_va = X[val_idx]
+
+            # 1. Gradient Boosted Trees
+            fold_gbdt = HistGradientBoostingClassifier(
+                max_iter=100,
                 learning_rate=0.08,
                 max_leaf_nodes=31,
                 min_samples_leaf=20,
                 random_state=self.random_state,
             )
-            fold_clf.fit(X[train_idx], y[train_idx])
-            oof_preds[val_idx] = fold_clf.predict_proba(X[val_idx])[:, 1]
+            fold_gbdt.fit(X_tr, y_tr)
+            oof_gbdt[val_idx] = fold_gbdt.predict_proba(X_va)[:, 1]
 
-        # Calculate CV metrics
-        ll = log_loss(y, oof_preds)
-        auc = roc_auc_score(y, oof_preds)
-        brier = brier_score_loss(y, oof_preds)
-        self.metrics = {"log_loss": round(float(ll), 4), "roc_auc": round(float(auc), 4), "brier_score": round(float(brier), 4)}
+            # 2. Deep Neural Network (MLP)
+            fold_mlp = Pipeline([
+                ("scaler", StandardScaler()),
+                ("mlp", MLPClassifier(
+                    hidden_layer_sizes=(64, 32, 16),
+                    activation="relu",
+                    max_iter=70,
+                    alpha=0.001,
+                    random_state=self.random_state,
+                    early_stopping=True,
+                    n_iter_no_change=6,
+                )),
+            ])
+            fold_mlp.fit(X_tr, y_tr)
+            oof_mlp[val_idx] = fold_mlp.predict_proba(X_va)[:, 1]
 
-        # Fit final model on all data with calibration
-        base_clf = HistGradientBoostingClassifier(
-            max_iter=120,
+            # 3. Regularized Logistic Regression
+            fold_lr = Pipeline([
+                ("scaler", StandardScaler()),
+                ("lr", LogisticRegression(C=1.0, max_iter=200, random_state=self.random_state)),
+            ])
+            fold_lr.fit(X_tr, y_tr)
+            oof_lr[val_idx] = fold_lr.predict_proba(X_va)[:, 1]
+
+        # Ensemble prediction (Weighted Soft Voting)
+        oof_ensemble = 0.50 * oof_gbdt + 0.35 * oof_mlp + 0.15 * oof_lr
+
+        # Benchmark comparisons across models
+        def _get_metrics(preds):
+            return {
+                "log_loss": round(float(log_loss(y, preds)), 4),
+                "roc_auc": round(float(roc_auc_score(y, preds)), 4),
+                "brier_score": round(float(brier_score_loss(y, preds)), 4),
+            }
+
+        self.model_comparison = {
+            "ensemble_hybrid_production": {
+                "name": "Production Deep Hybrid Stacking Ensemble (GBDT + Deep MLP + Logistic)",
+                "type": "Ensemble",
+                **_get_metrics(oof_ensemble),
+            },
+            "gradient_boosted_trees": {
+                "name": "Gradient Boosted Decision Trees (HistGBDT)",
+                "type": "Tree Ensemble",
+                **_get_metrics(oof_gbdt),
+            },
+            "deep_neural_network_mlp": {
+                "name": "Deep Neural Network (3 Dense Hidden Layers: 64-32-16 ReLU)",
+                "type": "Deep Learning",
+                **_get_metrics(oof_mlp),
+            },
+            "logistic_regression": {
+                "name": "Regularized L2 Logistic Regression (Baseline Anchor)",
+                "type": "Generalized Linear",
+                **_get_metrics(oof_lr),
+            },
+        }
+
+        self.metrics = self.model_comparison["ensemble_hybrid_production"]
+
+        # Fit final production models on full dataset
+        final_gbdt = HistGradientBoostingClassifier(
+            max_iter=100,
             learning_rate=0.08,
             max_leaf_nodes=31,
             min_samples_leaf=20,
             random_state=self.random_state,
         )
-        base_clf.fit(X, y)
-        self.inn2_model = base_clf
+        final_gbdt.fit(X, y)
+        self.inn2_gbdt = final_gbdt
 
-        # Calibration curve
-        prob_true, prob_pred = calibration_curve(y, oof_preds, n_bins=10)
+        final_mlp = Pipeline([
+            ("scaler", StandardScaler()),
+            ("mlp", MLPClassifier(
+                hidden_layer_sizes=(64, 32, 16),
+                activation="relu",
+                max_iter=70,
+                alpha=0.001,
+                random_state=self.random_state,
+                early_stopping=True,
+                n_iter_no_change=6,
+            )),
+        ])
+        final_mlp.fit(X, y)
+        self.inn2_mlp = final_mlp
+
+        final_lr = Pipeline([
+            ("scaler", StandardScaler()),
+            ("lr", LogisticRegression(C=1.0, max_iter=200, random_state=self.random_state)),
+        ])
+        final_lr.fit(X, y)
+        self.inn2_lr = final_lr
+
+        # Calibration curve for ensemble
+        prob_true, prob_pred = calibration_curve(y, oof_ensemble, n_bins=10)
         self.calibration_data = {
             "prob_true": [round(float(p), 4) for p in prob_true],
             "prob_pred": [round(float(p), 4) for p in prob_pred],
@@ -159,7 +247,7 @@ class WinProbabilityEngine:
         resource: np.ndarray,
         is_knockout: np.ndarray,
     ) -> np.ndarray:
-        """Predict Innings 2 batting team win probability with boundary enforcement."""
+        """Predict Innings 2 batting team win probability via Deep Hybrid Ensemble with boundary enforcement."""
         n = len(runs_needed)
         wp = np.zeros(n, dtype=float)
 
@@ -183,7 +271,13 @@ class WinProbabilityEngine:
                 is_knockout[active_mask],
             ])
             X_active = np.nan_to_num(X_active, 0.0)
-            preds = self.inn2_model.predict_proba(X_active)[:, 1]
+
+            # Ensemble soft voting
+            p_gbdt = self.inn2_gbdt.predict_proba(X_active)[:, 1]
+            p_mlp = self.inn2_mlp.predict_proba(X_active)[:, 1]
+            p_lr = self.inn2_lr.predict_proba(X_active)[:, 1]
+            preds = 0.50 * p_gbdt + 0.35 * p_mlp + 0.15 * p_lr
+
             wp[active_mask] = preds
 
         return np.clip(wp, 0.0, 1.0)

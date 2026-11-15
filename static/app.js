@@ -640,6 +640,8 @@ async function saveRetentionChanges() {
 // 6. METHODOLOGY & VALIDATION
 async function fetchValidationSummary() {
   const grid = document.getElementById("methodology-metrics-grid");
+  const mlContainer = document.getElementById("ml-models-table-container");
+
   try {
     const res = await fetch("/api/validation");
     const data = await res.json();
@@ -647,9 +649,9 @@ async function fetchValidationSummary() {
 
     grid.innerHTML = `
       <div class="card" style="padding:1.25rem;">
-        <h4 style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Innings 2 Model (GBDT)</h4>
+        <h4 style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Hybrid ML/DL Ensemble</h4>
         <div style="font-size:1.8rem; font-weight:900; color:var(--rr-pink); margin:0.3rem 0;">${m.wp_metrics.roc_auc} AUC</div>
-        <p style="font-size:0.75rem; color:var(--text-muted);">Log-Loss: ${m.wp_metrics.log_loss} • Brier Score: ${m.wp_metrics.brier_score} (5-Fold Match CV)</p>
+        <p style="font-size:0.75rem; color:var(--text-muted);">Log-Loss: ${m.wp_metrics.log_loss} • Brier: ${m.wp_metrics.brier_score} (5-Fold Match CV)</p>
       </div>
 
       <div class="card" style="padding:1.25rem;">
@@ -670,6 +672,42 @@ async function fetchValidationSummary() {
         <p style="font-size:0.75rem; color:var(--text-muted);">Top 10 rank stability when pressure cutoff shifts</p>
       </div>
     `;
+
+    // Render ML/DL Models Benchmark Table
+    try {
+      const mlRes = await fetch("/api/ml-models");
+      const mlData = await mlRes.json();
+      if (mlContainer && mlData && Object.keys(mlData).length > 0) {
+        const rows = Object.values(mlData).map((model) => `
+          <tr>
+            <td><strong>${model.name}</strong></td>
+            <td><span class="badge ${model.type === 'Ensemble' ? 'badge-rr' : (model.type === 'Deep Learning' ? 'badge-role-bowler' : 'badge-role-ar')}">${model.type}</span></td>
+            <td><strong style="color:var(--rr-pink);">${model.roc_auc.toFixed(4)}</strong></td>
+            <td>${model.log_loss.toFixed(4)}</td>
+            <td>${model.brier_score.toFixed(4)}</td>
+            <td><span style="color:var(--rr-green); font-weight:700;">${model.type === 'Ensemble' ? '★ Production Live' : 'Cross-Validated'}</span></td>
+          </tr>
+        `).join("");
+
+        mlContainer.innerHTML = `
+          <table>
+            <thead>
+              <tr>
+                <th>Model Architecture</th>
+                <th>Paradigm</th>
+                <th>ROC-AUC (CV)</th>
+                <th>Log-Loss</th>
+                <th>Brier Score</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        `;
+      }
+    } catch (mlErr) {
+      console.warn("Could not load ML models benchmark:", mlErr);
+    }
   } catch (err) {
     console.error("Failed to load validation:", err);
   }

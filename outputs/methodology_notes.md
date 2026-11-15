@@ -84,44 +84,44 @@ To evaluate performance *under pressure compared to usual levels*, we evaluate:
 ### Top 10 Batters Under Pressure (Combined)
 | rank | Player Name | role | Balls | SR | Delta SR | Score |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Tim David | Batter | 598 | 202.34 | 50.05 | 87.54 |
-| 2 | Shubman Gill | Batter | 354 | 230.79 | 93.45 | 87.38 |
-| 3 | Suryakumar Yadav | Batter | 632 | 234.49 | 88.61 | 86.98 |
-| 4 | Sai Sudharsan | Batter | 282 | 216.31 | 80.82 | 86.93 |
-| 5 | Heinrich Klaasen | Batter | 381 | 212.86 | 63.20 | 86.71 |
-| 6 | Shreyas Iyer | Batter | 428 | 208.41 | 71.35 | 85.77 |
-| 7 | Glenn Phillips | Batter | 336 | 203.27 | 79.93 | 85.35 |
-| 8 | Yashasvi Jaiswal | Batter | 210 | 236.19 | 90.91 | 84.54 |
-| 9 | Andre Russell | All-Rounder | 333 | 201.20 | 56.19 | 84.25 |
-| 10 | Jos Buttler | Batter | 460 | 221.30 | 78.68 | 84.01 |
+| 1 | Suryakumar Yadav | Batter | 651 | 246.54 | 105.21 | 89.94 |
+| 2 | Tim David | Batter | 603 | 201.82 | 49.44 | 88.66 |
+| 3 | Sai Sudharsan | Batter | 258 | 226.36 | 91.33 | 88.60 |
+| 4 | Shubman Gill | Batter | 341 | 245.75 | 110.05 | 88.24 |
+| 5 | Shreyas Iyer | Batter | 441 | 214.06 | 79.41 | 87.40 |
+| 6 | Ashutosh Sharma | Batter | 191 | 195.81 | 64.27 | 87.27 |
+| 7 | Virat Kohli | Batter | 371 | 207.82 | 73.73 | 86.97 |
+| 8 | Heinrich Klaasen | Batter | 385 | 213.51 | 64.34 | 86.82 |
+| 9 | Glenn Phillips | Batter | 350 | 206.57 | 86.30 | 86.80 |
+| 10 | Rajat Patidar | Batter | 250 | 238.80 | 97.36 | 86.56 |
 
 ### Top 10 Bowlers Under Pressure (Combined)
 | rank | Player Name | role | Balls | Econ | Delta Econ | Score |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Jasprit Bumrah | Bowler | 532 | 8.22 | 1.73 | 74.54 |
-| 2 | Sunil Narine | All-Rounder | 335 | 8.29 | 1.77 | 73.26 |
-| 3 | Kuldeep Yadav | Bowler | 541 | 8.84 | 1.30 | 71.19 |
-| 4 | Jamie Overton | All-Rounder | 157 | 8.75 | 0.56 | 69.76 |
-| 5 | Axar Patel | All-Rounder | 461 | 9.55 | 2.03 | 69.53 |
-| 6 | Mustafizur Rahman | Bowler | 625 | 8.76 | 1.91 | 69.07 |
-| 7 | Nathan Ellis | Bowler | 382 | 8.89 | 1.44 | 68.33 |
-| 8 | Krunal Pandya | All-Rounder | 246 | 9.46 | 2.18 | 68.22 |
-| 9 | Umran Malik | Bowler | 158 | 10.22 | 1.25 | 68.13 |
-| 10 | Matheesha Pathirana | Bowler | 476 | 9.42 | 2.34 | 68.12 |
+| 1 | Jasprit Bumrah | Bowler | 514 | 8.32 | 1.85 | 72.91 |
+| 2 | Sunil Narine | All-Rounder | 324 | 8.67 | 2.22 | 69.19 |
+| 3 | Jamie Overton | All-Rounder | 160 | 8.62 | 0.38 | 68.27 |
+| 4 | Mustafizur Rahman | Bowler | 631 | 8.81 | 2.02 | 68.06 |
+| 5 | Kuldeep Yadav | Bowler | 547 | 9.19 | 1.80 | 67.08 |
+| 6 | Nathan Ellis | Bowler | 386 | 9.30 | 2.15 | 65.36 |
+| 7 | Matheesha Pathirana | Bowler | 478 | 9.50 | 2.49 | 64.75 |
+| 8 | Krunal Pandya | All-Rounder | 232 | 9.75 | 2.50 | 64.49 |
+| 9 | Adam Zampa | Bowler | 331 | 10.21 | 2.63 | 64.13 |
+| 10 | Axar Patel | All-Rounder | 454 | 9.90 | 2.44 | 64.08 |
 
 ---
 
 ## 6. Statistical Reliability & Validation Checks
 - **Split-Half Reliability Test (Odd vs Even Match IDs):**
-  - Batting Spearman $\rho$: **0.2172** ($p < 0.01$).
-  - Bowling Spearman $\rho$: **0.1181** ($p < 0.05$).
+  - Batting Spearman $\rho$: **0.2476** ($p < 0.01$).
+  - Bowling Spearman $\rho$: **0.12** ($p < 0.05$).
   - Demonstrates that the rating captures reproducible player skill rather than match-selection noise.
 - **Temporal Stability (2022–2024 vs 2025–2026):**
-  - Batting stability $\rho$: **0.1609**.
+  - Batting stability $\rho$: **0.2524**.
   - Confirms multi-season performance persistence across different tactical cycles.
 - **Sensitivity to Pressure Threshold (20% vs 25% vs 30%):**
   - Top 10 Batters overlap between 20% and 30% cutoff: **50.0%**.
-  - Top 10 Bowlers overlap between 20% and 30% cutoff: **80.0%**.
+  - Top 10 Bowlers overlap between 20% and 30% cutoff: **60.0%**.
 
 ---
 

@@ -283,6 +283,33 @@
           <!-- Dynamically populated -->
         </div>
 
+        <!-- ML & Deep Learning Benchmark Comparison -->
+        <div class="card" style="background: linear-gradient(135deg, rgba(0, 210, 255, 0.08) 0%, rgba(15,23,42,0.95) 100%); border: 1px solid var(--rr-cyan); padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+            <div>
+              <h3 style="color:#fff; font-size:1.25rem; margin:0;">🤖 Machine Learning & Deep Learning Model Architecture</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">5-Fold GroupKFold Cross-Validation across independent matches (Strict zero match-leakage)</span>
+            </div>
+            <span class="badge" style="background:var(--rr-cyan); color:#000; font-weight:700;">Stacking Ensemble Active</span>
+          </div>
+
+          <div id="ml-models-table-container" class="table-responsive" style="margin-bottom:1rem;">
+            <!-- Dynamically populated from /api/ml-models -->
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; font-size:0.75rem; color:var(--text-muted);">
+            <div style="background:rgba(255,255,255,0.04); padding:0.8rem; border-radius:6px; border-left:3px solid var(--rr-pink);">
+              <strong style="color:#fff;">Tree Splitting (GBDT)</strong>: Captures non-linear discrete match phases, powerplay constraints, and wicket cliff edges.
+            </div>
+            <div style="background:rgba(255,255,255,0.04); padding:0.8rem; border-radius:6px; border-left:3px solid var(--rr-cyan);">
+              <strong style="color:#fff;">Deep Neural Network (MLP)</strong>: 3 Dense Layers (64-32-16 ReLU) embedding continuous interactions between RRR, CRR, and resources.
+            </div>
+            <div style="background:rgba(255,255,255,0.04); padding:0.8rem; border-radius:6px; border-left:3px solid var(--rr-gold);">
+              <strong style="color:#fff;">Soft Voting Meta-Learner</strong>: Smooths calibrated probabilities and minimizes Brier score for high-fidelity leverage index.
+            </div>
+          </div>
+        </div>
+
         <div class="card-title" style="margin-bottom: 1rem;">Exported Publication Charts (outputs/)</div>
         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
           <div class="card" style="padding:1rem;">

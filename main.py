@@ -346,6 +346,16 @@ def update_retention_list(payload: dict = Body(...)):
     return {"status": "success", "message": "Rajasthan Royals retentions updated."}
 
 
+@app.get("/api/ml-models")
+def get_ml_models():
+    """Retrieve statistical benchmarks and architecture details for ML/DL models."""
+    benchmark_path = os.path.join(ARTIFACTS_DIR, "ml_models_benchmark.json")
+    if os.path.exists(benchmark_path):
+        with open(benchmark_path, "r") as f:
+            return json.load(f)
+    return DATA_CACHE.get("validation", {}).get("model_comparison", {})
+
+
 @app.get("/api/validation")
 def get_validation_data():
     """Retrieve methodology validation summary and exported chart URLs."""

@@ -1,209 +1,208 @@
 rank,player_id,player_name,category,role,retention_status,pressure_balls,reliability_score
-1,6396,Tim David,Batter,Batter,Contracted (Royal Challengers Bengaluru),598,87.54
-2,6288,Shubman Gill,Batter,Batter,Contracted (Gujarat Titans),354,87.38
-3,1699,Suryakumar Yadav,Batter,Batter,Contracted (Mumbai Indians),632,86.98
-4,23450,Sai Sudharsan,Batter,Batter,Contracted (Gujarat Titans),282,86.93
-5,4260,Heinrich Klaasen,Batter,Batter,Contracted (Sunrisers Hyderabad),381,86.71
-6,3647,Shreyas Iyer,Batter,Batter,Contracted (Punjab Kings),428,85.77
-7,4853,Glenn Phillips,Batter,Batter,Contracted (Gujarat Titans),336,85.35
-8,6819,Yashasvi Jaiswal,Batter,Batter,RR Squad,210,84.54
-9,1318,Andre Russell,Batter,All-Rounder,Auction target,333,84.25
-10,813,Jos Buttler,Batter,Batter,Contracted (Gujarat Titans),460,84.01
-11,7544,Venkatesh Iyer,Batter,Batter,Contracted (Royal Challengers Bengaluru),276,83.9
-12,5039,Rajat Patidar,Batter,Batter,Contracted (Royal Challengers Bengaluru),252,83.86
-13,4722,Rashid Khan,Batter,Bowler,Contracted (Gujarat Titans),256,83.68
-14,5553,Phil Salt,Batter,Batter,Contracted (Royal Challengers Bengaluru),139,83.56
-15,2490,Mohammad Nawaz,Batter,All-Rounder,Auction target,294,83.34
-16,4708,Rinku Singh,Batter,Batter,Contracted (Kolkata Knight Riders),580,83.25
-17,8101,Ashutosh Sharma,Batter,Batter,Contracted (Delhi Capitals),190,82.96
-18,47,Virat Kohli,Batter,Batter,Contracted (Royal Challengers Bengaluru),386,82.69
-19,7897,Namboori Tilak Varma,Batter,Batter,Contracted (Mumbai Indians),742,82.62
-20,4736,Josh Inglis,Batter,Batter,Contracted (Lucknow Super Giants),176,81.78
-21,3125,Nicholas Pooran,Batter,Batter,Contracted (Lucknow Super Giants),554,81.67
-22,4986,Rovman Powell,Batter,Batter,Contracted (Kolkata Knight Riders),507,81.41
-23,6059,Ruturaj Gaikwad,Batter,Batter,Contracted (Chennai Super Kings),240,81.07
-24,4773,Jaker Ali Anik,Batter,Batter,Auction target,201,81.03
-25,5939,Cameron Green,Batter,All-Rounder,Contracted (Kolkata Knight Riders),266,80.94
-26,6281,Abhishek Sharma,Batter,Batter,Contracted (Sunrisers Hyderabad),186,80.93
-27,37052,Naman Dhir,Batter,All-Rounder,Contracted (Mumbai Indians),186,80.81
-28,1596,Moeen Ali,Batter,All-Rounder,Auction target,258,80.6
-29,2756,Shashank Singh,Batter,Batter,Contracted (Punjab Kings),169,80.13
-30,818,Mitchell Marsh,Batter,Batter,Contracted (Lucknow Super Giants),244,80.1
-31,3323,Jimmy Neesham,Batter,All-Rounder,Auction target,183,80.03
-32,6280,Harry Brook,Batter,Batter,Auction target,231,79.94
-33,6726,Romario Shepherd,Batter,All-Rounder,Contracted (Royal Challengers Bengaluru),323,79.88
-34,6423,Riyan Parag,Batter,Batter,RR Squad,396,79.81
-35,6651,Towhid Hridoy,Batter,Batter,Auction target,213,79.81
-36,4246,Nitish Rana,Batter,Batter,Contracted (Delhi Capitals),193,79.8
-37,7216,Prabhsimran Singh,Batter,Batter,Contracted (Punjab Kings),153,79.77
-38,3926,Rahul Tewatia,Batter,Batter,Contracted (Gujarat Titans),278,79.76
-39,4823,Washington Sundar,Batter,All-Rounder,Contracted (Gujarat Titans),283,79.59
-40,4117,Ishan Kishan,Batter,Batter,Contracted (Sunrisers Hyderabad),264,79.57
-41,25213,Dewald Brevis,Batter,Batter,Contracted (Chennai Super Kings),166,79.49
-42,4755,Shivam Dube,Batter,All-Rounder,Contracted (Chennai Super Kings),596,79.47
-43,3916,Jitesh Sharma,Batter,Batter,Contracted (Royal Challengers Bengaluru),381,79.39
-44,838,Glenn Maxwell,Batter,All-Rounder,Auction target,252,79.04
-45,143,Dinesh Karthik,Batter,Batter,Auction target,425,79.01
-46,2258,Sanju Samson,Batter,Batter,Contracted (Chennai Super Kings),374,78.99
-47,1107,Mohammad Nabi,Batter,All-Rounder,Auction target,251,78.55
-48,4106,Daryl Mitchell,Batter,Batter,Auction target,347,78.52
-49,7059,Nehal Wadhera,Batter,Batter,Contracted (Punjab Kings),172,78.39
-50,4703,Rishabh Pant,Batter,Batter,Contracted (Lucknow Super Giants),346,78.27
-51,2921,Fakhar Zaman,Batter,Batter,Auction target,189,78.24
-52,1101,George Dockrell,Batter,All-Rounder,Auction target,237,78.22
-53,20702,Tristan Stubbs,Batter,Batter,Contracted (Delhi Capitals),384,78.2
-54,8,Mahendra Singh Dhoni,Batter,Batter,Contracted (Chennai Super Kings),227,77.9
-55,4391,Liam Livingstone,Batter,All-Rounder,Contracted (Sunrisers Hyderabad),354,77.87
-56,3297,Shimron Hetmyer,Batter,Batter,RR Squad,547,77.86
-57,2533,Najibullah Zadran,Batter,Batter,Auction target,129,77.8
-58,126,Rohit Sharma,Batter,Batter,Contracted (Mumbai Indians),194,77.52
-59,6931,Pathum Nissanka,Batter,Batter,Contracted (Delhi Capitals),214,77.49
-60,6460,Ayush Badoni,Batter,Batter,Contracted (Lucknow Super Giants),355,77.42
-61,2984,Sikandar Raza,Batter,All-Rounder,Auction target,270,77.3
-62,6725,Sherfane Rutherford,Batter,Batter,Contracted (Mumbai Indians),312,77.29
-63,768,Reeza Hendricks,Batter,Batter,Auction target,122,77.23
-64,3024,Mohammad Rizwan,Batter,Batter,Auction target,253,77.01
-65,2436,Dasun Shanaka,Batter,All-Rounder,RR Squad,416,76.88
-66,4812,Harry Tector,Batter,All-Rounder,Auction target,188,76.7
-67,2876,Axar Patel,Batter,All-Rounder,Contracted (Delhi Capitals),581,76.45
-68,4821,Mahipal Lomror,Batter,Batter,Contracted (Mumbai Indians),133,76.4
-69,2639,Marcus Stoinis,Batter,All-Rounder,Contracted (Punjab Kings),402,76.32
-70,2463,Ryan Burl,Batter,All-Rounder,Auction target,199,76.07
-71,6512,Michael Bracewell,Batter,All-Rounder,Auction target,169,76.06
-72,7472,Shahbaz Ahmed,Batter,All-Rounder,Contracted (Lucknow Super Giants),186,76.05
-73,6314,Devdutt Padikkal,Batter,Batter,Contracted (Royal Challengers Bengaluru),161,75.98
-74,152,Ravindra Jadeja,Batter,All-Rounder,RR Squad,481,75.75
-75,3374,Mark Chapman,Batter,Batter,Auction target,248,75.56
-76,3672,Kusal Mendis,Batter,Batter,Auction target,159,75.49
-77,4409,Sam Curran,Batter,All-Rounder,RR Squad,359,75.34
-78,7446,Abdul Samad,Batter,Batter,Contracted (Lucknow Super Giants),201,75.24
-79,3330,Hardik Pandya,Batter,All-Rounder,Contracted (Mumbai Indians),794,75.2
-80,8647,Sediqullah Atal,Batter,Batter,Auction target,149,75.15
-81,2101,Quinton de Kock,Batter,Batter,Contracted (Mumbai Indians),156,75.1
-82,6676,Azmatullah Omarzai,Batter,All-Rounder,Contracted (Punjab Kings),246,75.08
-83,1077,David Miller,Batter,Batter,Contracted (Delhi Capitals),553,74.96
-84,5808,Karim Janat,Batter,All-Rounder,Auction target,134,74.86
-85,953,Lokesh Rahul,Batter,Batter,Contracted (Delhi Capitals),382,74.77
-86,5379,Mark Adair,Batter,All-Rounder,Auction target,138,74.59
-87,4219,Krunal Pandya,Batter,All-Rounder,Contracted (Royal Challengers Bengaluru),258,74.31
-88,4926,Shadab Khan,Batter,All-Rounder,Auction target,163,74.31
-89,8182,Donovan Ferreira,Batter,All-Rounder,RR Squad,136,74.27
-90,1941,Devon Conway,Batter,Batter,Auction target,196,74.23
-91,305,Ravichandran Ashwin,Batter,Bowler,Auction target,129,74.12
-92,88,Faf du Plessis,Batter,Batter,Auction target,186,74.1
-93,3782,M Shahrukh Khan,Batter,Batter,Contracted (Gujarat Titans),188,73.83
-94,796,Matthew Wade,Batter,Batter,Auction target,179,73.27
-95,142,Shikhar Dhawan,Batter,Batter,Auction target,123,73.05
-96,2003,Bhanuka Rajapaksa,Batter,Batter,Auction target,122,72.94
-97,23311,Jacob Bethell,Batter,Batter,Contracted (Royal Challengers Bengaluru),121,72.91
-98,6433,Darwish Rasooli,Batter,Batter,Auction target,135,72.86
-99,4904,Kamindu Mendis,Batter,All-Rounder,Contracted (Sunrisers Hyderabad),175,72.76
-100,8221,Nitish Reddy,Batter,All-Rounder,Contracted (Sunrisers Hyderabad),151,72.68
-101,2485,Babar Azam,Batter,Batter,Auction target,177,72.07
-102,2633,Jason Holder,Batter,Bowler,Contracted (Gujarat Titans),151,72.06
-103,4900,Wanindu Hasaranga,Batter,Bowler,Contracted (Lucknow Super Giants),235,71.97
-104,3056,Iftikhar Ahmed,Batter,All-Rounder,Auction target,197,71.81
-105,4494,Abhinav Manohar,Batter,Batter,Auction target,120,71.6
-106,7903,Shamim Hossain,Batter,Batter,Auction target,176,71.21
-107,7094,Curtis Campher,Batter,All-Rounder,Auction target,128,70.31
-108,4101,Mitchell Santner,Batter,All-Rounder,Contracted (Mumbai Indians),187,70.08
-109,1481,Kusal Perera,Batter,Batter,Auction target,166,69.91
-110,4895,Charith Asalanka,Batter,Batter,Auction target,286,69.85
-111,6448,Ibrahim Zadran,Batter,Batter,Auction target,193,69.69
-112,3605,Aiden Markram,Batter,Batter,Contracted (Lucknow Super Giants),230,68.67
-113,7260,Dhruv Jurel,Batter,Batter,RR Squad,309,68.41
-114,3648,Deepak Hooda,Batter,Batter,Auction target,156,66.92
-115,7741,Gareth Delany,Batter,All-Rounder,Auction target,154,66.6
-116,3489,Salman Agha,Batter,Batter,Auction target,128,61.23
-117,1758,Patrick Cummins,Batter,Bowler,Contracted (Sunrisers Hyderabad),156,57.92
-118,7808,Marco Jansen,Batter,Bowler,Contracted (Punjab Kings),121,54.58
-1,2933,Jasprit Bumrah,Bowler,Bowler,Contracted (Mumbai Indians),532,74.54
-2,781,Sunil Narine,Bowler,All-Rounder,Contracted (Kolkata Knight Riders),335,73.26
-3,3644,Kuldeep Yadav,Bowler,Bowler,Contracted (Delhi Capitals),541,71.19
-4,2382,Jamie Overton,Bowler,All-Rounder,Contracted (Chennai Super Kings),157,69.76
-5,2876,Axar Patel,Bowler,All-Rounder,Contracted (Delhi Capitals),461,69.53
-6,4373,Mustafizur Rahman,Bowler,Bowler,Contracted (Kolkata Knight Riders),625,69.07
-7,7920,Nathan Ellis,Bowler,Bowler,Contracted (Chennai Super Kings),382,68.33
-8,4219,Krunal Pandya,Bowler,All-Rounder,Contracted (Royal Challengers Bengaluru),246,68.22
-9,25048,Umran Malik,Bowler,Bowler,Contracted (Kolkata Knight Riders),158,68.13
-10,8661,Matheesha Pathirana,Bowler,Bowler,Contracted (Kolkata Knight Riders),476,68.12
-11,2636,Adam Zampa,Bowler,Bowler,Auction target,327,67.76
-12,1758,Patrick Cummins,Bowler,Bowler,Contracted (Sunrisers Hyderabad),291,67.56
-13,7327,Rasikh Salam,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),154,66.97
-14,4900,Wanindu Hasaranga,Bowler,Bowler,Contracted (Lucknow Super Giants),495,66.62
-15,4101,Mitchell Santner,Bowler,All-Rounder,Contracted (Mumbai Indians),270,66.4
-16,4722,Rashid Khan,Bowler,Bowler,Contracted (Gujarat Titans),653,66.15
-17,6669,Mohsin Khan,Bowler,Bowler,Contracted (Lucknow Super Giants),186,66.14
-18,5809,Naveen ul Haq,Bowler,Bowler,Auction target,238,65.74
-19,7240,FazalHaq Farooqi,Bowler,Bowler,Auction target,267,65.49
-20,7967,Noor Ahmad,Bowler,Bowler,Contracted (Chennai Super Kings),329,65.22
-21,2633,Jason Holder,Bowler,Bowler,Contracted (Gujarat Titans),618,65.18
-22,830,Josh Hazlewood,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),391,64.97
-23,360,Bhuvneshwar Kumar,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),626,64.81
-24,6256,Varun Chakravarthy,Bowler,Bowler,Contracted (Kolkata Knight Riders),486,64.29
-25,2320,Trent Boult,Bowler,Bowler,Contracted (Mumbai Indians),313,64.23
-26,6464,Arshdeep Singh,Bowler,Bowler,Contracted (Punjab Kings),977,63.82
-27,3298,Jofra Archer,Bowler,Bowler,RR Squad,311,63.7
-28,19316,Maheesh Theekshana,Bowler,Bowler,Auction target,482,63.69
-29,5041,Mukesh Kumar,Bowler,Bowler,Contracted (Delhi Capitals),366,63.56
-30,3628,Kagiso Rabada,Bowler,Bowler,Contracted (Gujarat Titans),395,63.34
-31,4807,Joshua Little,Bowler,Bowler,Auction target,193,63.3
-32,39657,Eshan Malinga,Bowler,Bowler,Contracted (Sunrisers Hyderabad),213,63.27
-33,305,Ravichandran Ashwin,Bowler,Bowler,Auction target,252,62.8
-34,2417,Akeal Hosein,Bowler,Bowler,Contracted (Chennai Super Kings),263,62.36
-35,4692,Lockie Ferguson,Bowler,Bowler,Contracted (Punjab Kings),287,62.23
-36,29888,Harshit Rana,Bowler,Bowler,Contracted (Kolkata Knight Riders),282,61.88
-37,3275,Alzarri Joseph,Bowler,Bowler,Auction target,398,61.72
-38,3653,Avesh Khan,Bowler,Bowler,Contracted (Lucknow Super Giants),593,61.63
-39,5940,Riley Meredith,Bowler,Bowler,Auction target,137,61.55
-40,2399,Dushmantha Chameera,Bowler,Bowler,Contracted (Delhi Capitals),318,61.3
-41,152,Ravindra Jadeja,Bowler,All-Rounder,RR Squad,220,61.29
-42,2261,Harshal Patel,Bowler,Bowler,Contracted (Sunrisers Hyderabad),614,61.03
-43,7503,Ravi Bishnoi,Bowler,Bowler,RR Squad,628,60.87
-44,1612,Yuzvendra Chahal,Bowler,Bowler,Contracted (Punjab Kings),591,60.16
-45,6287,Yash Thakur,Bowler,Bowler,Contracted (Punjab Kings),175,59.87
-46,4641,Lungi Ngidi,Bowler,Bowler,Contracted (Delhi Capitals),234,59.85
-47,6161,Rahul Chahar,Bowler,Bowler,Contracted (Chennai Super Kings),219,59.65
-48,278,Tim Southee,Bowler,Bowler,Auction target,199,59.23
-49,6676,Azmatullah Omarzai,Bowler,All-Rounder,Contracted (Punjab Kings),231,59.0
-50,1566,Mohammed Shami,Bowler,Bowler,Contracted (Lucknow Super Giants),261,58.72
-51,19312,Nuwan Thushara,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),204,58.55
-52,6628,Gerald Coetzee,Bowler,Bowler,Contracted (Sunrisers Hyderabad),130,58.16
-53,6806,Tushar Deshpande,Bowler,Bowler,RR Squad,290,57.93
-54,4409,Sam Curran,Bowler,All-Rounder,RR Squad,452,57.9
-55,7322,Yash Dayal,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),233,57.66
-56,2334,Dwaine Pretorius,Bowler,All-Rounder,Auction target,131,57.4
-57,8530,Kartik Tyagi,Bowler,Bowler,Contracted (Kolkata Knight Riders),147,57.28
-58,3697,Kyle Jamieson,Bowler,Bowler,Contracted (Delhi Capitals),132,57.08
-59,5738,Xavier Bartlett,Bowler,Bowler,Contracted (Punjab Kings),158,57.03
-60,4837,Obed McCoy,Bowler,Bowler,Auction target,260,57.02
-61,4265,T Natarajan,Bowler,Bowler,Contracted (Delhi Capitals),423,57.0
-62,5577,Sai Kishore,Bowler,Bowler,Contracted (Gujarat Titans),141,56.67
-63,4823,Washington Sundar,Bowler,All-Rounder,Contracted (Gujarat Titans),162,56.47
-64,829,Mitchell Starc,Bowler,Bowler,Contracted (Delhi Capitals),195,55.58
-65,2411,Sandeep Sharma,Bowler,Bowler,RR Squad,322,55.36
-66,8177,Akash Madhwal,Bowler,Bowler,Contracted (Chennai Super Kings),143,55.14
-67,4487,Vyshak Kumar,Bowler,Bowler,Contracted (Punjab Kings),152,55.1
-68,7270,Anrich Nortje,Bowler,Bowler,Contracted (Lucknow Super Giants),239,54.6
-69,58246,Prince Yadav,Bowler,Bowler,Contracted (Lucknow Super Giants),203,54.53
-70,5944,Mohammed Siraj,Bowler,Bowler,Contracted (Gujarat Titans),426,54.37
-71,6726,Romario Shepherd,Bowler,All-Rounder,Contracted (Royal Challengers Bengaluru),436,54.35
-72,2847,Shardul Thakur,Bowler,Bowler,Contracted (Mumbai Indians),326,54.27
-73,2878,Mohit Sharma,Bowler,Bowler,Auction target,305,54.06
-74,4816,Khaleel Ahmed,Bowler,Bowler,Contracted (Chennai Super Kings),279,54.04
-75,3330,Hardik Pandya,Bowler,All-Rounder,Contracted (Mumbai Indians),417,53.67
-76,4489,Prasidh Krishna,Bowler,Bowler,Contracted (Gujarat Titans),341,53.55
-77,8746,Vaibhav Arora,Bowler,Bowler,Contracted (Kolkata Knight Riders),189,52.81
-78,7325,Harpreet Brar,Bowler,Bowler,Contracted (Punjab Kings),148,52.38
-79,5939,Cameron Green,Bowler,All-Rounder,Contracted (Kolkata Knight Riders),169,51.79
-80,786,Chris Jordan,Bowler,Bowler,Auction target,203,51.41
-81,1318,Andre Russell,Bowler,All-Rounder,Auction target,291,51.39
-82,4840,Odean Smith,Bowler,All-Rounder,Auction target,141,51.3
-83,2639,Marcus Stoinis,Bowler,All-Rounder,Contracted (Punjab Kings),222,51.05
-84,7808,Marco Jansen,Bowler,Bowler,Contracted (Punjab Kings),294,50.29
-85,36982,Suyash Sharma,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),214,49.01
-86,4391,Liam Livingstone,Bowler,All-Rounder,Contracted (Sunrisers Hyderabad),160,49.0
-87,8221,Nitish Reddy,Bowler,All-Rounder,Contracted (Sunrisers Hyderabad),122,48.58
-88,1813,Deepak Chahar,Bowler,Bowler,Contracted (Mumbai Indians),156,46.38
-89,1071,Jaydev Unadkat,Bowler,Bowler,Contracted (Sunrisers Hyderabad),147,45.88
-90,58134,Digvesh Rathi,Bowler,Bowler,Contracted (Lucknow Super Giants),124,43.0
+1,1699,Suryakumar Yadav,Batter,Batter,Contracted (Mumbai Indians),651,89.94
+2,6396,Tim David,Batter,Batter,Contracted (Royal Challengers Bengaluru),603,88.66
+3,23450,Sai Sudharsan,Batter,Batter,Contracted (Gujarat Titans),258,88.6
+4,6288,Shubman Gill,Batter,Batter,Contracted (Gujarat Titans),341,88.24
+5,3647,Shreyas Iyer,Batter,Batter,Contracted (Punjab Kings),441,87.4
+6,8101,Ashutosh Sharma,Batter,Batter,Contracted (Delhi Capitals),191,87.27
+7,47,Virat Kohli,Batter,Batter,Contracted (Royal Challengers Bengaluru),371,86.97
+8,4260,Heinrich Klaasen,Batter,Batter,Contracted (Sunrisers Hyderabad),385,86.82
+9,4853,Glenn Phillips,Batter,Batter,Contracted (Gujarat Titans),350,86.8
+10,5039,Rajat Patidar,Batter,Batter,Contracted (Royal Challengers Bengaluru),250,86.56
+11,7544,Venkatesh Iyer,Batter,Batter,Contracted (Royal Challengers Bengaluru),280,86.34
+12,7897,Namboori Tilak Varma,Batter,Batter,Contracted (Mumbai Indians),749,86.1
+13,4117,Ishan Kishan,Batter,Batter,Contracted (Sunrisers Hyderabad),263,85.66
+14,6819,Yashasvi Jaiswal,Batter,Batter,RR Squad,192,85.2
+15,813,Jos Buttler,Batter,Batter,Contracted (Gujarat Titans),455,85.15
+16,5939,Cameron Green,Batter,All-Rounder,Contracted (Kolkata Knight Riders),264,84.86
+17,818,Mitchell Marsh,Batter,Batter,Contracted (Lucknow Super Giants),219,84.74
+18,4736,Josh Inglis,Batter,Batter,Contracted (Lucknow Super Giants),167,84.62
+19,37052,Naman Dhir,Batter,All-Rounder,Contracted (Mumbai Indians),188,84.52
+20,1318,Andre Russell,Batter,All-Rounder,Auction target,353,84.47
+21,6281,Abhishek Sharma,Batter,Batter,Contracted (Sunrisers Hyderabad),156,84.41
+22,4708,Rinku Singh,Batter,Batter,Contracted (Kolkata Knight Riders),585,84.19
+23,4722,Rashid Khan,Batter,Bowler,Contracted (Gujarat Titans),264,84.18
+24,25213,Dewald Brevis,Batter,Batter,Contracted (Chennai Super Kings),159,83.91
+25,3125,Nicholas Pooran,Batter,Batter,Contracted (Lucknow Super Giants),559,83.85
+26,3916,Jitesh Sharma,Batter,Batter,Contracted (Royal Challengers Bengaluru),390,83.82
+27,7216,Prabhsimran Singh,Batter,Batter,Contracted (Punjab Kings),127,83.79
+28,2490,Mohammad Nawaz,Batter,All-Rounder,Auction target,294,83.79
+29,126,Rohit Sharma,Batter,Batter,Contracted (Mumbai Indians),158,83.67
+30,4986,Rovman Powell,Batter,Batter,Contracted (Kolkata Knight Riders),530,83.47
+31,2756,Shashank Singh,Batter,Batter,Contracted (Punjab Kings),169,82.94
+32,5553,Phil Salt,Batter,Batter,Contracted (Royal Challengers Bengaluru),132,82.74
+33,6651,Towhid Hridoy,Batter,Batter,Auction target,209,82.71
+34,3024,Mohammad Rizwan,Batter,Batter,Auction target,258,82.58
+35,4812,Harry Tector,Batter,All-Rounder,Auction target,191,82.44
+36,6423,Riyan Parag,Batter,Batter,RR Squad,395,82.26
+37,6931,Pathum Nissanka,Batter,Batter,Contracted (Delhi Capitals),204,82.24
+38,1596,Moeen Ali,Batter,All-Rounder,Auction target,265,82.06
+39,2921,Fakhar Zaman,Batter,Batter,Auction target,190,82.04
+40,6059,Ruturaj Gaikwad,Batter,Batter,Contracted (Chennai Super Kings),236,82.0
+41,143,Dinesh Karthik,Batter,Batter,Auction target,438,81.99
+42,4755,Shivam Dube,Batter,All-Rounder,Contracted (Chennai Super Kings),613,81.95
+43,2533,Najibullah Zadran,Batter,Batter,Auction target,140,81.91
+44,4773,Jaker Ali Anik,Batter,Batter,Auction target,200,81.76
+45,4246,Nitish Rana,Batter,Batter,Contracted (Delhi Capitals),182,81.48
+46,20702,Tristan Stubbs,Batter,Batter,Contracted (Delhi Capitals),398,81.44
+47,3926,Rahul Tewatia,Batter,Batter,Contracted (Gujarat Titans),280,81.44
+48,4703,Rishabh Pant,Batter,Batter,Contracted (Lucknow Super Giants),354,81.26
+49,2984,Sikandar Raza,Batter,All-Rounder,Auction target,264,81.26
+50,2258,Sanju Samson,Batter,Batter,Contracted (Chennai Super Kings),372,81.17
+51,838,Glenn Maxwell,Batter,All-Rounder,Auction target,255,81.06
+52,6726,Romario Shepherd,Batter,All-Rounder,Contracted (Royal Challengers Bengaluru),334,80.87
+53,4391,Liam Livingstone,Batter,All-Rounder,Contracted (Sunrisers Hyderabad),365,80.71
+54,953,Lokesh Rahul,Batter,Batter,Contracted (Delhi Capitals),354,80.5
+55,4823,Washington Sundar,Batter,All-Rounder,Contracted (Gujarat Titans),293,80.43
+56,6725,Sherfane Rutherford,Batter,Batter,Contracted (Mumbai Indians),317,80.41
+57,3672,Kusal Mendis,Batter,Batter,Auction target,153,80.09
+58,6280,Harry Brook,Batter,Batter,Auction target,241,80.05
+59,8,Mahendra Singh Dhoni,Batter,Batter,Contracted (Chennai Super Kings),238,79.78
+60,4106,Daryl Mitchell,Batter,Batter,Auction target,358,79.68
+61,2101,Quinton de Kock,Batter,Batter,Contracted (Mumbai Indians),151,79.59
+62,1107,Mohammad Nabi,Batter,All-Rounder,Auction target,254,79.55
+63,3297,Shimron Hetmyer,Batter,Batter,RR Squad,556,79.29
+64,1101,George Dockrell,Batter,All-Rounder,Auction target,242,79.25
+65,6314,Devdutt Padikkal,Batter,Batter,Contracted (Royal Challengers Bengaluru),151,79.18
+66,3323,Jimmy Neesham,Batter,All-Rounder,Auction target,187,78.99
+67,2876,Axar Patel,Batter,All-Rounder,Contracted (Delhi Capitals),583,78.59
+68,1077,David Miller,Batter,Batter,Contracted (Delhi Capitals),555,78.56
+69,8647,Sediqullah Atal,Batter,Batter,Auction target,143,78.46
+70,4821,Mahipal Lomror,Batter,Batter,Contracted (Mumbai Indians),135,78.29
+71,2463,Ryan Burl,Batter,All-Rounder,Auction target,198,78.16
+72,2639,Marcus Stoinis,Batter,All-Rounder,Contracted (Punjab Kings),402,77.77
+73,4219,Krunal Pandya,Batter,All-Rounder,Contracted (Royal Challengers Bengaluru),256,77.61
+74,4409,Sam Curran,Batter,All-Rounder,RR Squad,361,77.47
+75,2436,Dasun Shanaka,Batter,All-Rounder,RR Squad,424,77.46
+76,3374,Mark Chapman,Batter,Batter,Auction target,249,77.44
+77,6460,Ayush Badoni,Batter,Batter,Contracted (Lucknow Super Giants),360,77.42
+78,7472,Shahbaz Ahmed,Batter,All-Rounder,Contracted (Lucknow Super Giants),187,77.37
+79,3330,Hardik Pandya,Batter,All-Rounder,Contracted (Mumbai Indians),795,77.36
+80,6512,Michael Bracewell,Batter,All-Rounder,Auction target,166,77.34
+81,7059,Nehal Wadhera,Batter,Batter,Contracted (Punjab Kings),181,76.89
+82,305,Ravichandran Ashwin,Batter,Bowler,Auction target,131,76.86
+83,6676,Azmatullah Omarzai,Batter,All-Rounder,Contracted (Punjab Kings),248,76.79
+84,796,Matthew Wade,Batter,Batter,Auction target,177,76.66
+85,3605,Aiden Markram,Batter,Batter,Contracted (Lucknow Super Giants),225,76.48
+86,7446,Abdul Samad,Batter,Batter,Contracted (Lucknow Super Giants),210,76.38
+87,88,Faf du Plessis,Batter,Batter,Auction target,181,76.34
+88,152,Ravindra Jadeja,Batter,All-Rounder,RR Squad,490,76.05
+89,7260,Dhruv Jurel,Batter,Batter,RR Squad,321,75.88
+90,2680,Nurul Hasan,Batter,Batter,Auction target,127,75.82
+91,5379,Mark Adair,Batter,All-Rounder,Auction target,138,75.48
+92,1941,Devon Conway,Batter,Batter,Auction target,192,75.45
+93,4926,Shadab Khan,Batter,All-Rounder,Auction target,162,75.28
+94,142,Shikhar Dhawan,Batter,Batter,Auction target,121,75.19
+95,3782,M Shahrukh Khan,Batter,Batter,Contracted (Gujarat Titans),188,75.09
+96,8182,Donovan Ferreira,Batter,All-Rounder,RR Squad,138,75.07
+97,4904,Kamindu Mendis,Batter,All-Rounder,Contracted (Sunrisers Hyderabad),177,75.04
+98,2485,Babar Azam,Batter,Batter,Auction target,160,74.93
+99,5808,Karim Janat,Batter,All-Rounder,Auction target,136,74.74
+100,6448,Ibrahim Zadran,Batter,Batter,Auction target,197,74.39
+101,7903,Shamim Hossain,Batter,Batter,Auction target,182,74.27
+102,2633,Jason Holder,Batter,Bowler,Contracted (Gujarat Titans),155,73.95
+103,3056,Iftikhar Ahmed,Batter,All-Rounder,Auction target,198,73.86
+104,8221,Nitish Reddy,Batter,All-Rounder,Contracted (Sunrisers Hyderabad),156,73.82
+105,1481,Kusal Perera,Batter,Batter,Auction target,161,73.68
+106,4900,Wanindu Hasaranga,Batter,Bowler,Contracted (Lucknow Super Giants),247,73.6
+107,2003,Bhanuka Rajapaksa,Batter,Batter,Auction target,127,73.52
+108,4895,Charith Asalanka,Batter,Batter,Auction target,274,73.1
+109,6433,Darwish Rasooli,Batter,Batter,Auction target,131,72.74
+110,7094,Curtis Campher,Batter,All-Rounder,Auction target,125,72.59
+111,4494,Abhinav Manohar,Batter,Batter,Auction target,125,72.13
+112,4101,Mitchell Santner,Batter,All-Rounder,Contracted (Mumbai Indians),192,71.81
+113,3648,Deepak Hooda,Batter,Batter,Auction target,161,69.43
+114,7741,Gareth Delany,Batter,All-Rounder,Auction target,152,69.34
+115,2687,Roston Chase,Batter,All-Rounder,Auction target,125,66.25
+116,3489,Salman Agha,Batter,Batter,Auction target,124,62.14
+117,1758,Patrick Cummins,Batter,Bowler,Contracted (Sunrisers Hyderabad),158,57.24
+118,7808,Marco Jansen,Batter,Bowler,Contracted (Punjab Kings),125,52.09
+1,2933,Jasprit Bumrah,Bowler,Bowler,Contracted (Mumbai Indians),514,72.91
+2,781,Sunil Narine,Bowler,All-Rounder,Contracted (Kolkata Knight Riders),324,69.19
+3,2382,Jamie Overton,Bowler,All-Rounder,Contracted (Chennai Super Kings),160,68.27
+4,4373,Mustafizur Rahman,Bowler,Bowler,Contracted (Kolkata Knight Riders),631,68.06
+5,3644,Kuldeep Yadav,Bowler,Bowler,Contracted (Delhi Capitals),547,67.08
+6,7920,Nathan Ellis,Bowler,Bowler,Contracted (Chennai Super Kings),386,65.36
+7,8661,Matheesha Pathirana,Bowler,Bowler,Contracted (Kolkata Knight Riders),478,64.75
+8,4219,Krunal Pandya,Bowler,All-Rounder,Contracted (Royal Challengers Bengaluru),232,64.49
+9,2636,Adam Zampa,Bowler,Bowler,Auction target,331,64.13
+10,2876,Axar Patel,Bowler,All-Rounder,Contracted (Delhi Capitals),454,64.08
+11,4722,Rashid Khan,Bowler,Bowler,Contracted (Gujarat Titans),631,63.69
+12,1758,Patrick Cummins,Bowler,Bowler,Contracted (Sunrisers Hyderabad),288,63.64
+13,3298,Jofra Archer,Bowler,Bowler,RR Squad,320,63.17
+14,25048,Umran Malik,Bowler,Bowler,Contracted (Kolkata Knight Riders),158,62.71
+15,4807,Joshua Little,Bowler,Bowler,Auction target,197,62.59
+16,830,Josh Hazlewood,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),385,62.23
+17,6669,Mohsin Khan,Bowler,Bowler,Contracted (Lucknow Super Giants),183,62.04
+18,360,Bhuvneshwar Kumar,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),624,61.66
+19,4900,Wanindu Hasaranga,Bowler,Bowler,Contracted (Lucknow Super Giants),508,61.66
+20,7967,Noor Ahmad,Bowler,Bowler,Contracted (Chennai Super Kings),339,61.64
+21,7327,Rasikh Salam,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),159,61.53
+22,4692,Lockie Ferguson,Bowler,Bowler,Contracted (Punjab Kings),289,61.41
+23,4101,Mitchell Santner,Bowler,All-Rounder,Contracted (Mumbai Indians),261,61.36
+24,7240,FazalHaq Farooqi,Bowler,Bowler,Auction target,268,61.13
+25,2320,Trent Boult,Bowler,Bowler,Contracted (Mumbai Indians),303,61.09
+26,6256,Varun Chakravarthy,Bowler,Bowler,Contracted (Kolkata Knight Riders),478,60.96
+27,19316,Maheesh Theekshana,Bowler,Bowler,Auction target,484,60.88
+28,3275,Alzarri Joseph,Bowler,Bowler,Auction target,401,60.6
+29,2633,Jason Holder,Bowler,Bowler,Contracted (Gujarat Titans),618,60.49
+30,6464,Arshdeep Singh,Bowler,Bowler,Contracted (Punjab Kings),991,60.27
+31,39657,Eshan Malinga,Bowler,Bowler,Contracted (Sunrisers Hyderabad),220,59.95
+32,5809,Naveen ul Haq,Bowler,Bowler,Auction target,233,59.76
+33,2261,Harshal Patel,Bowler,Bowler,Contracted (Sunrisers Hyderabad),637,59.14
+34,3628,Kagiso Rabada,Bowler,Bowler,Contracted (Gujarat Titans),399,59.13
+35,5041,Mukesh Kumar,Bowler,Bowler,Contracted (Delhi Capitals),362,59.08
+36,8530,Kartik Tyagi,Bowler,Bowler,Contracted (Kolkata Knight Riders),149,58.81
+37,5940,Riley Meredith,Bowler,Bowler,Auction target,142,58.76
+38,2399,Dushmantha Chameera,Bowler,Bowler,Contracted (Delhi Capitals),306,58.52
+39,4641,Lungi Ngidi,Bowler,Bowler,Contracted (Delhi Capitals),234,58.36
+40,19312,Nuwan Thushara,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),202,58.28
+41,29888,Harshit Rana,Bowler,Bowler,Contracted (Kolkata Knight Riders),289,58.15
+42,3653,Avesh Khan,Bowler,Bowler,Contracted (Lucknow Super Giants),593,57.99
+43,2334,Dwaine Pretorius,Bowler,All-Rounder,Auction target,138,57.37
+44,305,Ravichandran Ashwin,Bowler,Bowler,Auction target,257,55.84
+45,4409,Sam Curran,Bowler,All-Rounder,RR Squad,445,55.76
+46,5577,Sai Kishore,Bowler,Bowler,Contracted (Gujarat Titans),146,55.58
+47,1612,Yuzvendra Chahal,Bowler,Bowler,Contracted (Punjab Kings),593,55.52
+48,6628,Gerald Coetzee,Bowler,Bowler,Contracted (Sunrisers Hyderabad),136,55.29
+49,5738,Xavier Bartlett,Bowler,Bowler,Contracted (Punjab Kings),150,55.25
+50,4265,T Natarajan,Bowler,Bowler,Contracted (Delhi Capitals),414,55.21
+51,6287,Yash Thakur,Bowler,Bowler,Contracted (Punjab Kings),173,54.99
+52,4823,Washington Sundar,Bowler,All-Rounder,Contracted (Gujarat Titans),151,54.66
+53,7503,Ravi Bishnoi,Bowler,Bowler,RR Squad,625,54.63
+54,4816,Khaleel Ahmed,Bowler,Bowler,Contracted (Chennai Super Kings),272,54.19
+55,2411,Sandeep Sharma,Bowler,Bowler,RR Squad,325,54.05
+56,3697,Kyle Jamieson,Bowler,Bowler,Contracted (Delhi Capitals),129,54.03
+57,4487,Vyshak Kumar,Bowler,Bowler,Contracted (Punjab Kings),155,53.94
+58,1566,Mohammed Shami,Bowler,Bowler,Contracted (Lucknow Super Giants),243,53.72
+59,8177,Akash Madhwal,Bowler,Bowler,Contracted (Chennai Super Kings),142,53.67
+60,278,Tim Southee,Bowler,Bowler,Auction target,202,53.62
+61,2878,Mohit Sharma,Bowler,Bowler,Auction target,304,53.57
+62,4837,Obed McCoy,Bowler,Bowler,Auction target,263,53.55
+63,829,Mitchell Starc,Bowler,Bowler,Contracted (Delhi Capitals),197,53.11
+64,152,Ravindra Jadeja,Bowler,All-Rounder,RR Squad,208,52.73
+65,6806,Tushar Deshpande,Bowler,Bowler,RR Squad,282,52.35
+66,7322,Yash Dayal,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),225,52.26
+67,7270,Anrich Nortje,Bowler,Bowler,Contracted (Lucknow Super Giants),236,52.21
+68,6676,Azmatullah Omarzai,Bowler,All-Rounder,Contracted (Punjab Kings),231,52.15
+69,8746,Vaibhav Arora,Bowler,Bowler,Contracted (Kolkata Knight Riders),196,52.1
+70,58246,Prince Yadav,Bowler,Bowler,Contracted (Lucknow Super Giants),198,52.01
+71,786,Chris Jordan,Bowler,Bowler,Auction target,204,51.97
+72,2847,Shardul Thakur,Bowler,Bowler,Contracted (Mumbai Indians),330,51.89
+73,6726,Romario Shepherd,Bowler,All-Rounder,Contracted (Royal Challengers Bengaluru),432,51.16
+74,3330,Hardik Pandya,Bowler,All-Rounder,Contracted (Mumbai Indians),416,50.94
+75,5944,Mohammed Siraj,Bowler,Bowler,Contracted (Gujarat Titans),428,50.68
+76,6161,Rahul Chahar,Bowler,Bowler,Contracted (Chennai Super Kings),217,49.87
+77,5939,Cameron Green,Bowler,All-Rounder,Contracted (Kolkata Knight Riders),169,49.8
+78,4489,Prasidh Krishna,Bowler,Bowler,Contracted (Gujarat Titans),336,49.74
+79,7808,Marco Jansen,Bowler,Bowler,Contracted (Punjab Kings),303,49.27
+80,1318,Andre Russell,Bowler,All-Rounder,Auction target,303,48.61
+81,2639,Marcus Stoinis,Bowler,All-Rounder,Contracted (Punjab Kings),218,48.39
+82,4840,Odean Smith,Bowler,All-Rounder,Auction target,141,47.86
+83,36982,Suyash Sharma,Bowler,Bowler,Contracted (Royal Challengers Bengaluru),218,47.03
+84,7325,Harpreet Brar,Bowler,Bowler,Contracted (Punjab Kings),149,46.32
+85,4391,Liam Livingstone,Bowler,All-Rounder,Contracted (Sunrisers Hyderabad),162,45.76
+86,8221,Nitish Reddy,Bowler,All-Rounder,Contracted (Sunrisers Hyderabad),124,45.74
+87,58134,Digvesh Rathi,Bowler,Bowler,Contracted (Lucknow Super Giants),124,44.6
+88,1071,Jaydev Unadkat,Bowler,Bowler,Contracted (Sunrisers Hyderabad),150,41.98
+89,1813,Deepak Chahar,Bowler,Bowler,Contracted (Mumbai Indians),146,33.72

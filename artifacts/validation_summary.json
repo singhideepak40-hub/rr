@@ -2,60 +2,60 @@
   "split_half": {
     "batting": {
       "n_overlap": 180,
-      "spearman_rho": 0.2172,
-      "spearman_pvalue": 0.0034065097256071593,
-      "pearson_r": 0.2092
+      "spearman_rho": 0.2476,
+      "spearman_pvalue": 0.0008043509587929306,
+      "pearson_r": 0.2368
     },
     "bowling": {
-      "n_overlap": 99,
-      "spearman_rho": 0.1181,
-      "spearman_pvalue": 0.24429487629483054,
-      "pearson_r": 0.1064
+      "n_overlap": 96,
+      "spearman_rho": 0.12,
+      "spearman_pvalue": 0.2440482620189643,
+      "pearson_r": 0.1376
     }
   },
   "temporal": {
-    "batting_early_vs_late_rho": 0.1609,
+    "batting_early_vs_late_rho": 0.2524,
     "batting_overlap_count": 125,
-    "bowling_early_vs_late_rho": 0.3154,
+    "bowling_early_vs_late_rho": 0.2404,
     "bowling_overlap_count": 60
   },
   "sensitivity": {
     "batters_by_threshold": {
       "20": [
-        "Shubman Gill",
-        "Tim David",
         "Suryakumar Yadav",
-        "Heinrich Klaasen",
-        "Rinku Singh",
-        "Andre Russell",
-        "Glenn Phillips",
+        "Tim David",
+        "Shubman Gill",
+        "Ashutosh Sharma",
         "Namboori Tilak Varma",
-        "Venkatesh Iyer",
-        "Rashid Khan"
+        "Jos Buttler",
+        "Glenn Phillips",
+        "Shreyas Iyer",
+        "Andre Russell",
+        "Heinrich Klaasen"
       ],
       "25": [
-        "Tim David",
-        "Shubman Gill",
         "Suryakumar Yadav",
+        "Tim David",
         "Sai Sudharsan",
-        "Heinrich Klaasen",
+        "Shubman Gill",
         "Shreyas Iyer",
+        "Ashutosh Sharma",
+        "Virat Kohli",
+        "Heinrich Klaasen",
         "Glenn Phillips",
-        "Yashasvi Jaiswal",
-        "Andre Russell",
-        "Jos Buttler"
+        "Rajat Patidar"
       ],
       "30": [
-        "Heinrich Klaasen",
-        "Tim David",
         "Sai Sudharsan",
-        "Yashasvi Jaiswal",
-        "Suryakumar Yadav",
-        "Josh Inglis",
+        "Tim David",
         "Shubman Gill",
-        "Phil Salt",
-        "Glenn Phillips",
-        "Shreyas Iyer"
+        "Yashasvi Jaiswal",
+        "Virat Kohli",
+        "Suryakumar Yadav",
+        "Heinrich Klaasen",
+        "Shreyas Iyer",
+        "Prabhsimran Singh",
+        "Josh Inglis"
       ]
     },
     "bowlers_by_threshold": {
@@ -63,251 +63,283 @@
         "Jasprit Bumrah",
         "Sunil Narine",
         "Kuldeep Yadav",
-        "Axar Patel",
-        "Noor Ahmad",
-        "Jamie Overton",
-        "Rasikh Salam",
         "Mustafizur Rahman",
+        "Jamie Overton",
+        "Adam Zampa",
+        "Umran Malik",
+        "Mohsin Khan",
         "Matheesha Pathirana",
-        "Nathan Ellis"
+        "Noor Ahmad"
       ],
       "25": [
         "Jasprit Bumrah",
         "Sunil Narine",
-        "Kuldeep Yadav",
         "Jamie Overton",
-        "Axar Patel",
         "Mustafizur Rahman",
+        "Kuldeep Yadav",
         "Nathan Ellis",
+        "Matheesha Pathirana",
         "Krunal Pandya",
-        "Umran Malik",
-        "Matheesha Pathirana"
+        "Adam Zampa",
+        "Axar Patel"
       ],
       "30": [
         "Jasprit Bumrah",
         "Sunil Narine",
         "Kuldeep Yadav",
+        "Jamie Overton",
         "Mustafizur Rahman",
         "Nathan Ellis",
         "Matheesha Pathirana",
         "Krunal Pandya",
-        "Axar Patel",
-        "Jamie Overton",
-        "Patrick Cummins"
+        "Patrick Cummins",
+        "Varun Chakravarthy"
       ]
     },
     "batters_overlap_pct_20_vs_30": 50.0,
-    "bowlers_overlap_pct_20_vs_30": 80.0
+    "bowlers_overlap_pct_20_vs_30": 60.0
   },
   "bootstrap": {
     "batters": {
       "1699": {
         "score_ci_95": [
-          84.43,
-          89.62
+          86.96,
+          91.87
         ],
         "rank_ci_95": [
           1,
-          12
+          8
         ]
       },
       "4260": {
         "score_ci_95": [
-          82.89,
-          89.34
+          82.48,
+          89.32
+        ],
+        "rank_ci_95": [
+          3,
+          43
+        ]
+      },
+      "8101": {
+        "score_ci_95": [
+          70.83,
+          91.1
         ],
         "rank_ci_95": [
           1,
-          22
+          149
         ]
       },
-      "6819": {
+      "47": {
         "score_ci_95": [
-          77.4,
-          89.41
+          80.76,
+          89.18
         ],
         "rank_ci_95": [
-          1,
-          68
-        ]
-      },
-      "1318": {
-        "score_ci_95": [
-          76.13,
-          86.5
-        ],
-        "rank_ci_95": [
-          4,
-          77
-        ]
-      },
-      "813": {
-        "score_ci_95": [
-          79.17,
-          86.6
-        ],
-        "rank_ci_95": [
-          4,
-          45
+          2,
+          61
         ]
       },
       "6288": {
         "score_ci_95": [
-          82.86,
-          90.27
+          83.62,
+          91.06
         ],
         "rank_ci_95": [
           1,
-          20
+          29
+        ]
+      },
+      "5039": {
+        "score_ci_95": [
+          81.93,
+          89.99
+        ],
+        "rank_ci_95": [
+          2,
+          54
         ]
       },
       "4853": {
         "score_ci_95": [
-          80.28,
-          88.02
+          82.1,
+          89.17
         ],
         "rank_ci_95": [
-          2,
-          37
+          3,
+          45
         ]
       },
       "23450": {
         "score_ci_95": [
-          82.26,
-          90.26
+          83.83,
+          91.48
+        ],
+        "rank_ci_95": [
+          1,
+          27
+        ]
+      },
+      "6396": {
+        "score_ci_95": [
+          83.81,
+          91.48
+        ],
+        "rank_ci_95": [
+          1,
+          29
+        ]
+      },
+      "3647": {
+        "score_ci_95": [
+          83.36,
+          90.25
+        ],
+        "rank_ci_95": [
+          1,
+          34
+        ]
+      }
+    },
+    "bowlers": {
+      "2876": {
+        "score_ci_95": [
+          57.7,
+          68.62
+        ],
+        "rank_ci_95": [
+          5,
+          49
+        ]
+      },
+      "2636": {
+        "score_ci_95": [
+          58.54,
+          68.36
+        ],
+        "rank_ci_95": [
+          4,
+          49
+        ]
+      },
+      "781": {
+        "score_ci_95": [
+          63.25,
+          75.38
         ],
         "rank_ci_95": [
           1,
           21
         ]
       },
-      "6396": {
-        "score_ci_95": [
-          83.71,
-          90.61
-        ],
-        "rank_ci_95": [
-          1,
-          14
-        ]
-      },
-      "3647": {
-        "score_ci_95": [
-          81.21,
-          88.51
-        ],
-        "rank_ci_95": [
-          1,
-          30
-        ]
-      }
-    },
-    "bowlers": {
-      "781": {
-        "score_ci_95": [
-          68.2,
-          78.03
-        ],
-        "rank_ci_95": [
-          1,
-          17
-        ]
-      },
       "2382": {
         "score_ci_95": [
-          63.25,
-          77.49
+          61.76,
+          76.11
         ],
         "rank_ci_95": [
           1,
-          34
+          31
         ]
       },
       "7920": {
         "score_ci_95": [
-          62.81,
-          72.94
-        ],
-        "rank_ci_95": [
-          2,
-          38
-        ]
-      },
-      "2933": {
-        "score_ci_95": [
-          69.41,
-          79.31
-        ],
-        "rank_ci_95": [
-          1,
-          11
-        ]
-      },
-      "4373": {
-        "score_ci_95": [
-          64.71,
-          72.63
-        ],
-        "rank_ci_95": [
-          3,
-          29
-        ]
-      },
-      "8661": {
-        "score_ci_95": [
-          62.62,
-          72.14
-        ],
-        "rank_ci_95": [
-          3,
-          46
-        ]
-      },
-      "25048": {
-        "score_ci_95": [
-          57.05,
-          74.29
-        ],
-        "rank_ci_95": [
-          2,
-          73
-        ]
-      },
-      "4219": {
-        "score_ci_95": [
-          60.52,
-          74.12
-        ],
-        "rank_ci_95": [
-          2,
-          55
-        ]
-      },
-      "2876": {
-        "score_ci_95": [
-          63.88,
-          73.11
+          60.66,
+          70.95
         ],
         "rank_ci_95": [
           2,
           36
         ]
       },
-      "3644": {
+      "2933": {
         "score_ci_95": [
-          65.99,
-          75.19
+          67.06,
+          78.51
         ],
         "rank_ci_95": [
           1,
-          22
+          7
+        ]
+      },
+      "4373": {
+        "score_ci_95": [
+          62.84,
+          71.39
+        ],
+        "rank_ci_95": [
+          2,
+          20
+        ]
+      },
+      "8661": {
+        "score_ci_95": [
+          58.66,
+          69.44
+        ],
+        "rank_ci_95": [
+          4,
+          45
+        ]
+      },
+      "4219": {
+        "score_ci_95": [
+          57.82,
+          71.81
+        ],
+        "rank_ci_95": [
+          2,
+          51
+        ]
+      },
+      "3644": {
+        "score_ci_95": [
+          61.85,
+          71.15
+        ],
+        "rank_ci_95": [
+          1,
+          27
         ]
       }
     }
   },
   "wp_metrics": {
-    "log_loss": 0.4206,
-    "roc_auc": 0.8871,
-    "brier_score": 0.1373
+    "name": "Production Deep Hybrid Stacking Ensemble (GBDT + Deep MLP + Logistic)",
+    "type": "Ensemble",
+    "log_loss": 0.4102,
+    "roc_auc": 0.8914,
+    "brier_score": 0.1343
+  },
+  "model_comparison": {
+    "ensemble_hybrid_production": {
+      "name": "Production Deep Hybrid Stacking Ensemble (GBDT + Deep MLP + Logistic)",
+      "type": "Ensemble",
+      "log_loss": 0.4102,
+      "roc_auc": 0.8914,
+      "brier_score": 0.1343
+    },
+    "gradient_boosted_trees": {
+      "name": "Gradient Boosted Decision Trees (HistGBDT)",
+      "type": "Tree Ensemble",
+      "log_loss": 0.4179,
+      "roc_auc": 0.888,
+      "brier_score": 0.1366
+    },
+    "deep_neural_network_mlp": {
+      "name": "Deep Neural Network (3 Dense Hidden Layers: 64-32-16 ReLU)",
+      "type": "Deep Learning",
+      "log_loss": 0.4231,
+      "roc_auc": 0.8871,
+      "brier_score": 0.1374
+    },
+    "logistic_regression": {
+      "name": "Regularized L2 Logistic Regression (Baseline Anchor)",
+      "type": "Generalized Linear",
+      "log_loss": 0.4066,
+      "roc_auc": 0.8941,
+      "brier_score": 0.1323
+    }
   }
 }
