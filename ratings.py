@@ -14,12 +14,13 @@ class RatingsEngine:
 
     def __init__(
         self,
-        min_batter_balls: int = 60,
-        min_batter_matches: int = 10,
-        min_bowler_balls: int = 48,
-        min_bowler_matches: int = 10,
+        min_batter_balls: int = 120,
+        min_batter_matches: int = 12,
+        min_bowler_balls: int = 120,
+        min_bowler_matches: int = 12,
+        min_ipl_balls: int = 24,
         shrinkage_k_batter: float = 50.0,
-        shrinkage_k_bowler: float = 40.0,
+        shrinkage_k_bowler: float = 50.0,
         weight_level: float = 0.35,
         weight_delta: float = 0.25,
         weight_consistency: float = 0.25,
@@ -29,6 +30,7 @@ class RatingsEngine:
         self.min_batter_matches = min_batter_matches
         self.min_bowler_balls = min_bowler_balls
         self.min_bowler_matches = min_bowler_matches
+        self.min_ipl_balls = min_ipl_balls
         self.shrinkage_k_batter = shrinkage_k_batter
         self.shrinkage_k_bowler = shrinkage_k_bowler
         self.weight_level = weight_level
@@ -46,8 +48,8 @@ class RatingsEngine:
             sub = sub[sub["competition_type"] == "T20I"].copy()
             sub["comp_weight"] = 1.0
         else:
-            # Combined: IPL given slight strength premium due to concentrated talent
-            comp_weights = {"IPL": 1.05, "T20I": 1.00, "Other T20": 0.90}
+            # Combined: IPL given 1.15x weight reflecting elite global talent concentration
+            comp_weights = {"IPL": 1.15, "T20I": 1.00, "Other T20": 0.85}
             sub["comp_weight"] = sub["competition_type"].map(comp_weights).fillna(1.0)
         return sub
 
@@ -190,22 +192,26 @@ class RatingsEngine:
         eligible["reliability_score"] = np.round(raw_composite, 2)
 
         # Determine Role
-        bowling_counts = (
-            df_fmt.groupby("bowler_id")["is_legal_ball"]
-            .sum()
-            .to_dict()
-        )
-        eligible["balls_bowled"] = eligible["striker_id"].map(bowling_counts).fillna(0).astype(int)
-        def assign_role(row):
-            bf = row["pressure_balls"]
-            bb = row["balls_bowled"]
-            if bf >= 40 and bb >= 40:
+        total_batting_counts = df.groupby("striker_id")["is_legal_ball"].sum().to_dict()
+        total_bowling_counts = df.groupby("bowler_id")["is_legal_ball"].sum().to_dict()
+
+        eligible["tot_faced"] = eligible["striker_id"].map(total_batting_counts).fillna(0).astype(int)
+        eligible["tot_bowled"] = eligible["striker_id"].map(total_bowling_counts).fillna(0).astype(int)
+
+        def assign_role_bat(row):
+            bf = row["tot_faced"]
+            bb = row["tot_bowled"]
+            if bb >= 100 and (bf < 50 or bb >= 4.0 * max(1, bf)):
+                return "Bowler"
+            elif bf >= 100 and (bb < 50 or bf >= 4.0 * max(1, bb)):
+                return "Batter"
+            elif bf >= 80 and bb >= 80:
                 return "All-Rounder"
-            elif bb >= 60 and bf < 40:
+            elif bb >= bf:
                 return "Bowler"
             else:
                 return "Batter"
-        eligible["role"] = eligible.apply(assign_role, axis=1)
+        eligible["role"] = eligible.apply(assign_role_bat, axis=1)
 
         # Sort and rank
         eligible = eligible.sort_values("reliability_score", ascending=False).reset_index(drop=True)
@@ -250,6 +256,7 @@ class RatingsEngine:
             total_wpa=("w_wpa", "sum"),
             total_rcae=("w_rcae", "sum"),
             pressure_matches=("match_id", "nunique"),
+            ipl_balls=("is_legal_ball", lambda s: s[press.loc[s.index, "competition_type"] == "IPL"].sum()),
         ).reset_index()
 
         # Merge normal baseline
@@ -257,11 +264,23 @@ class RatingsEngine:
         merged["norm_balls"] = merged["norm_balls"].fillna(0)
         merged["norm_econ"] = merged["norm_econ"].fillna(8.2)
 
-        # Filter eligibility
-        eligible = merged[
-            (merged["pressure_balls"] >= self.min_bowler_balls)
-            & (merged["pressure_matches"] >= self.min_bowler_matches)
-        ].copy()
+        # Filter eligibility (for combined mode, ensure player has IPL experience)
+        if format_mode == "combined":
+            eligible = merged[
+                (merged["pressure_balls"] >= self.min_bowler_balls)
+                & (merged["pressure_matches"] >= self.min_bowler_matches)
+                & (merged["ipl_balls"] >= self.min_ipl_balls)
+            ].copy()
+        elif format_mode == "ipl":
+            eligible = merged[
+                (merged["pressure_balls"] >= max(60, self.min_bowler_balls // 2))
+                & (merged["pressure_matches"] >= 6)
+            ].copy()
+        else:
+            eligible = merged[
+                (merged["pressure_balls"] >= self.min_bowler_balls)
+                & (merged["pressure_matches"] >= self.min_bowler_matches)
+            ].copy()
 
         if eligible.empty:
             return pd.DataFrame()
@@ -319,19 +338,19 @@ class RatingsEngine:
 
         # 5. Sample Size Confidence
         eligible["sample_confidence"] = np.clip(
-            0.70 + 0.30 * (1.0 - np.exp(-(eligible["pressure_balls"] - self.min_bowler_balls) / 80.0)),
+            0.70 + 0.30 * (1.0 - np.exp(-(eligible["pressure_balls"] - self.min_bowler_balls) / 150.0)),
             0.70,
             1.00,
         )
 
         # 6. Component Scores (0 to 100)
         # Level score: high shrunk WPA per ball and negative shrunk RCAE per ball
-        wpa_norm = np.clip((eligible["shrunk_wpa_per_ball"] + 0.005) / 0.015 * 50.0 + 50.0, 0.0, 100.0)
-        rcae_norm = np.clip((-eligible["shrunk_rcae_per_ball"] + 0.3) / 0.8 * 50.0 + 50.0, 0.0, 100.0)
-        eligible["score_level"] = 0.60 * wpa_norm + 0.40 * rcae_norm
+        wpa_norm = np.clip((eligible["shrunk_wpa_per_ball"] + 0.002) / 0.015 * 50.0 + 50.0, 0.0, 100.0)
+        rcae_norm = np.clip((-eligible["shrunk_rcae_per_ball"] + 0.2) / 0.6 * 50.0 + 50.0, 0.0, 100.0)
+        eligible["score_level"] = 0.65 * wpa_norm + 0.35 * rcae_norm
 
-        # Delta score: -econ_delta (saving runs under pressure is positive)
-        eligible["score_delta"] = np.clip(50.0 - eligible["econ_delta"] * 10.0, 0.0, 100.0)
+        # Delta score: Economy suppression relative to expected phase par (RCAE)
+        eligible["score_delta"] = np.clip(50.0 - (eligible["rcae_per_ball"] * 25.0), 10.0, 100.0)
 
         # Consistency score
         eligible["score_consistency"] = eligible["consistency_score"]
@@ -349,22 +368,26 @@ class RatingsEngine:
         eligible["reliability_score"] = np.round(raw_composite, 2)
 
         # Determine Role
-        batting_counts = (
-            df_fmt.groupby("striker_id")["is_legal_ball"]
-            .sum()
-            .to_dict()
-        )
-        eligible["balls_faced"] = eligible["bowler_id"].map(batting_counts).fillna(0).astype(int)
-        def assign_role(row):
-            bb = row["pressure_balls"]
-            bf = row["balls_faced"]
-            if bf >= 40 and bb >= 40:
-                return "All-Rounder"
-            elif bf >= 60 and bb < 40:
-                return "Batter"
-            else:
+        total_batting_counts = df.groupby("striker_id")["is_legal_ball"].sum().to_dict()
+        total_bowling_counts = df.groupby("bowler_id")["is_legal_ball"].sum().to_dict()
+
+        eligible["tot_faced"] = eligible["bowler_id"].map(total_batting_counts).fillna(0).astype(int)
+        eligible["tot_bowled"] = eligible["bowler_id"].map(total_bowling_counts).fillna(0).astype(int)
+
+        def assign_role_bowl(row):
+            bf = row["tot_faced"]
+            bb = row["tot_bowled"]
+            if bb >= 100 and (bf < 50 or bb >= 4.0 * max(1, bf)):
                 return "Bowler"
-        eligible["role"] = eligible.apply(assign_role, axis=1)
+            elif bf >= 100 and (bb < 50 or bf >= 4.0 * max(1, bb)):
+                return "Batter"
+            elif bf >= 80 and bb >= 80:
+                return "All-Rounder"
+            elif bb >= bf:
+                return "Bowler"
+            else:
+                return "Batter"
+        eligible["role"] = eligible.apply(assign_role_bowl, axis=1)
 
         # Sort and rank
         eligible = eligible.sort_values("reliability_score", ascending=False).reset_index(drop=True)

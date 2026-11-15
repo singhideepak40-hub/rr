@@ -74,27 +74,27 @@
       "status": "Critical Gap",
       "recommended_targets": [
         {
-          "player_id": 5979,
-          "player_name": "Abrar Ahmed",
+          "player_id": 2933,
+          "player_name": "Jasprit Bumrah",
           "role": "Bowler",
-          "score": 76.86,
-          "stat_line": "Pressure Econ: 7.13 (Delta: +0.60)",
+          "score": 74.54,
+          "stat_line": "Pressure Econ: 8.22 (Delta: +1.73)",
           "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
         },
         {
-          "player_id": 6450,
-          "player_name": "Mujeeb Ur Rahman",
+          "player_id": 781,
+          "player_name": "Sunil Narine",
           "role": "All-Rounder",
-          "score": 74.72,
-          "stat_line": "Pressure Econ: 7.46 (Delta: +0.60)",
+          "score": 73.26,
+          "stat_line": "Pressure Econ: 8.29 (Delta: +1.77)",
           "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
         },
         {
-          "player_id": 34485,
-          "player_name": "Sufiyan Muqeem",
+          "player_id": 3644,
+          "player_name": "Kuldeep Yadav",
           "role": "Bowler",
-          "score": 73.13,
-          "stat_line": "Pressure Econ: 6.67 (Delta: +0.74)",
+          "score": 71.19,
+          "stat_line": "Pressure Econ: 8.84 (Delta: +1.30)",
           "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
         }
       ]
@@ -110,18 +110,10 @@
       "status": "Strong Asset",
       "recommended_targets": [
         {
-          "player_id": 23450,
-          "player_name": "Sai Sudharsan",
-          "role": "Batter",
-          "score": 87.29,
-          "stat_line": "Pressure SR: 216.3 (Delta: +80.8)",
-          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
-        },
-        {
           "player_id": 6396,
           "player_name": "Tim David",
           "role": "Batter",
-          "score": 87.27,
+          "score": 87.54,
           "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
           "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
         },
@@ -129,8 +121,16 @@
           "player_id": 6288,
           "player_name": "Shubman Gill",
           "role": "Batter",
-          "score": 87.26,
+          "score": 87.38,
           "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
+        },
+        {
+          "player_id": 1699,
+          "player_name": "Suryakumar Yadav",
+          "role": "Batter",
+          "score": 86.98,
+          "stat_line": "Pressure SR: 234.5 (Delta: +88.6)",
           "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
         }
       ]
@@ -146,18 +146,10 @@
       "status": "Strong Asset",
       "recommended_targets": [
         {
-          "player_id": 23450,
-          "player_name": "Sai Sudharsan",
-          "role": "Batter",
-          "score": 87.29,
-          "stat_line": "Pressure SR: 216.3 (Delta: +80.8)",
-          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
-        },
-        {
           "player_id": 6396,
           "player_name": "Tim David",
           "role": "Batter",
-          "score": 87.27,
+          "score": 87.54,
           "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
           "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
         },
@@ -165,8 +157,16 @@
           "player_id": 6288,
           "player_name": "Shubman Gill",
           "role": "Batter",
-          "score": 87.26,
+          "score": 87.38,
           "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
+        },
+        {
+          "player_id": 1699,
+          "player_name": "Suryakumar Yadav",
+          "role": "Batter",
+          "score": 86.98,
+          "stat_line": "Pressure SR: 234.5 (Delta: +88.6)",
           "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
         }
       ]
@@ -182,18 +182,10 @@
       "status": "Strong Asset",
       "recommended_targets": [
         {
-          "player_id": 23450,
-          "player_name": "Sai Sudharsan",
-          "role": "Batter",
-          "score": 87.29,
-          "stat_line": "Pressure SR: 216.3 (Delta: +80.8)",
-          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
-        },
-        {
           "player_id": 6396,
           "player_name": "Tim David",
           "role": "Batter",
-          "score": 87.27,
+          "score": 87.54,
           "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
           "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
         },
@@ -201,8 +193,16 @@
           "player_id": 6288,
           "player_name": "Shubman Gill",
           "role": "Batter",
-          "score": 87.26,
+          "score": 87.38,
           "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
+        },
+        {
+          "player_id": 1699,
+          "player_name": "Suryakumar Yadav",
+          "role": "Batter",
+          "score": 86.98,
+          "stat_line": "Pressure SR: 234.5 (Delta: +88.6)",
           "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
         }
       ]
@@ -218,27 +218,27 @@
       "status": "Strong Asset",
       "recommended_targets": [
         {
-          "player_id": 5979,
-          "player_name": "Abrar Ahmed",
+          "player_id": 2933,
+          "player_name": "Jasprit Bumrah",
           "role": "Bowler",
-          "score": 76.86,
-          "stat_line": "Pressure Econ: 7.13 (Delta: +0.60)",
+          "score": 74.54,
+          "stat_line": "Pressure Econ: 8.22 (Delta: +1.73)",
           "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
         },
         {
-          "player_id": 6450,
-          "player_name": "Mujeeb Ur Rahman",
+          "player_id": 781,
+          "player_name": "Sunil Narine",
           "role": "All-Rounder",
-          "score": 74.72,
-          "stat_line": "Pressure Econ: 7.46 (Delta: +0.60)",
+          "score": 73.26,
+          "stat_line": "Pressure Econ: 8.29 (Delta: +1.77)",
           "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
         },
         {
-          "player_id": 34485,
-          "player_name": "Sufiyan Muqeem",
+          "player_id": 3644,
+          "player_name": "Kuldeep Yadav",
           "role": "Bowler",
-          "score": 73.13,
-          "stat_line": "Pressure Econ: 6.67 (Delta: +0.74)",
+          "score": 71.19,
+          "stat_line": "Pressure Econ: 8.84 (Delta: +1.30)",
           "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
         }
       ]

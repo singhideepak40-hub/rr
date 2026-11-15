@@ -2,22 +2,22 @@
   "split_half": {
     "batting": {
       "n_overlap": 180,
-      "spearman_rho": 0.2216,
-      "spearman_pvalue": 0.002795597697421242,
-      "pearson_r": 0.211
+      "spearman_rho": 0.2172,
+      "spearman_pvalue": 0.0034065097256071593,
+      "pearson_r": 0.2092
     },
     "bowling": {
-      "n_overlap": 206,
-      "spearman_rho": -0.1296,
-      "spearman_pvalue": 0.06345349945226958,
-      "pearson_r": -0.1556
+      "n_overlap": 99,
+      "spearman_rho": 0.1181,
+      "spearman_pvalue": 0.24429487629483054,
+      "pearson_r": 0.1064
     }
   },
   "temporal": {
-    "batting_early_vs_late_rho": 0.1645,
+    "batting_early_vs_late_rho": 0.1609,
     "batting_overlap_count": 125,
-    "bowling_early_vs_late_rho": 0.1612,
-    "bowling_overlap_count": 127
+    "bowling_early_vs_late_rho": 0.3154,
+    "bowling_overlap_count": 60
   },
   "sensitivity": {
     "batters_by_threshold": {
@@ -25,96 +25,96 @@
         "Shubman Gill",
         "Tim David",
         "Suryakumar Yadav",
-        "Yashasvi Jaiswal",
         "Heinrich Klaasen",
-        "Glenn Phillips",
-        "Andre Russell",
-        "Venkatesh Iyer",
         "Rinku Singh",
-        "Namboori Tilak Varma"
+        "Andre Russell",
+        "Glenn Phillips",
+        "Namboori Tilak Varma",
+        "Venkatesh Iyer",
+        "Rashid Khan"
       ],
       "25": [
-        "Sai Sudharsan",
         "Tim David",
         "Shubman Gill",
         "Suryakumar Yadav",
+        "Sai Sudharsan",
         "Heinrich Klaasen",
         "Shreyas Iyer",
         "Glenn Phillips",
         "Yashasvi Jaiswal",
-        "Phil Salt",
-        "Rajat Patidar"
+        "Andre Russell",
+        "Jos Buttler"
       ],
       "30": [
         "Heinrich Klaasen",
-        "Yashasvi Jaiswal",
         "Tim David",
         "Sai Sudharsan",
-        "Josh Inglis",
-        "Phil Salt",
+        "Yashasvi Jaiswal",
         "Suryakumar Yadav",
+        "Josh Inglis",
         "Shubman Gill",
+        "Phil Salt",
         "Glenn Phillips",
         "Shreyas Iyer"
       ]
     },
     "bowlers_by_threshold": {
       "20": [
-        "Abrar Ahmed",
-        "Rasikh Salam",
-        "Mujeeb Ur Rahman",
         "Jasprit Bumrah",
         "Sunil Narine",
-        "Jamie Overton",
-        "Sufiyan Muqeem",
-        "Spencer Johnson",
         "Kuldeep Yadav",
-        "Mohammad Wasim"
+        "Axar Patel",
+        "Noor Ahmad",
+        "Jamie Overton",
+        "Rasikh Salam",
+        "Mustafizur Rahman",
+        "Matheesha Pathirana",
+        "Nathan Ellis"
       ],
       "25": [
-        "Abrar Ahmed",
-        "Mujeeb Ur Rahman",
-        "Sufiyan Muqeem",
-        "Jamie Overton",
-        "Ottneil Baartman",
-        "Rasikh Salam",
+        "Jasprit Bumrah",
         "Sunil Narine",
         "Kuldeep Yadav",
-        "David Willey",
-        "Jasprit Bumrah"
+        "Jamie Overton",
+        "Axar Patel",
+        "Mustafizur Rahman",
+        "Nathan Ellis",
+        "Krunal Pandya",
+        "Umran Malik",
+        "Matheesha Pathirana"
       ],
       "30": [
-        "Abrar Ahmed",
-        "William Jacks",
-        "Imad Wasim",
-        "Sufiyan Muqeem",
-        "Jamie Overton",
-        "Kuldeep Yadav",
-        "Saim Ayub",
         "Jasprit Bumrah",
-        "Benjamin Sears",
-        "Mujeeb Ur Rahman"
+        "Sunil Narine",
+        "Kuldeep Yadav",
+        "Mustafizur Rahman",
+        "Nathan Ellis",
+        "Matheesha Pathirana",
+        "Krunal Pandya",
+        "Axar Patel",
+        "Jamie Overton",
+        "Patrick Cummins"
       ]
     },
-    "batters_overlap_pct_20_vs_30": 60.0,
-    "bowlers_overlap_pct_20_vs_30": 60.0
+    "batters_overlap_pct_20_vs_30": 50.0,
+    "bowlers_overlap_pct_20_vs_30": 80.0
   },
   "bootstrap": {
     "batters": {
       "1699": {
         "score_ci_95": [
-          84.6,
-          89.59
+          84.43,
+          89.62
         ],
         "rank_ci_95": [
           1,
-          11
+          12
         ]
       },
       "4260": {
         "score_ci_95": [
-          82.75,
-          89.1
+          82.89,
+          89.34
         ],
         "rank_ci_95": [
           1,
@@ -123,184 +123,184 @@
       },
       "6819": {
         "score_ci_95": [
-          77.69,
-          89.22
+          77.4,
+          89.41
         ],
         "rank_ci_95": [
           1,
-          64
+          68
         ]
       },
-      "5039": {
+      "1318": {
         "score_ci_95": [
-          78.23,
-          87.24
+          76.13,
+          86.5
         ],
         "rank_ci_95": [
-          3,
-          55
+          4,
+          77
+        ]
+      },
+      "813": {
+        "score_ci_95": [
+          79.17,
+          86.6
+        ],
+        "rank_ci_95": [
+          4,
+          45
         ]
       },
       "6288": {
         "score_ci_95": [
-          82.87,
-          89.89
+          82.86,
+          90.27
         ],
         "rank_ci_95": [
           1,
           20
         ]
       },
-      "5553": {
-        "score_ci_95": [
-          76.79,
-          89.12
-        ],
-        "rank_ci_95": [
-          1,
-          83
-        ]
-      },
       "4853": {
         "score_ci_95": [
-          80.39,
-          87.95
+          80.28,
+          88.02
         ],
         "rank_ci_95": [
-          1,
+          2,
           37
         ]
       },
       "23450": {
         "score_ci_95": [
-          82.43,
-          90.17
+          82.26,
+          90.26
         ],
         "rank_ci_95": [
           1,
-          22
+          21
         ]
       },
       "6396": {
         "score_ci_95": [
-          83.78,
-          90.46
+          83.71,
+          90.61
         ],
         "rank_ci_95": [
           1,
-          15
+          14
         ]
       },
       "3647": {
         "score_ci_95": [
-          80.93,
-          88.3
+          81.21,
+          88.51
         ],
         "rank_ci_95": [
           1,
-          31
+          30
         ]
       }
     },
     "bowlers": {
-      "1219": {
+      "781": {
         "score_ci_95": [
-          62.81,
-          76.18
-        ],
-        "rank_ci_95": [
-          3,
-          61
-        ]
-      },
-      "8805": {
-        "score_ci_95": [
-          61.07,
-          84.91
+          68.2,
+          78.03
         ],
         "rank_ci_95": [
           1,
-          78
-        ]
-      },
-      "781": {
-        "score_ci_95": [
-          65.96,
-          75.84
-        ],
-        "rank_ci_95": [
-          4,
-          39
+          17
         ]
       },
       "2382": {
         "score_ci_95": [
-          62.88,
-          81.15
+          63.25,
+          77.49
         ],
         "rank_ci_95": [
           1,
-          64
+          34
         ]
       },
-      "6450": {
+      "7920": {
         "score_ci_95": [
-          64.64,
-          79.34
+          62.81,
+          72.94
         ],
         "rank_ci_95": [
-          1,
-          47
-        ]
-      },
-      "34485": {
-        "score_ci_95": [
-          60.27,
-          85.01
-        ],
-        "rank_ci_95": [
-          1,
-          82
+          2,
+          38
         ]
       },
       "2933": {
         "score_ci_95": [
-          65.6,
-          76.18
-        ],
-        "rank_ci_95": [
-          3,
-          41
-        ]
-      },
-      "5979": {
-        "score_ci_95": [
-          69.2,
-          81.08
+          69.41,
+          79.31
         ],
         "rank_ci_95": [
           1,
-          20
+          11
+        ]
+      },
+      "4373": {
+        "score_ci_95": [
+          64.71,
+          72.63
+        ],
+        "rank_ci_95": [
+          3,
+          29
+        ]
+      },
+      "8661": {
+        "score_ci_95": [
+          62.62,
+          72.14
+        ],
+        "rank_ci_95": [
+          3,
+          46
+        ]
+      },
+      "25048": {
+        "score_ci_95": [
+          57.05,
+          74.29
+        ],
+        "rank_ci_95": [
+          2,
+          73
+        ]
+      },
+      "4219": {
+        "score_ci_95": [
+          60.52,
+          74.12
+        ],
+        "rank_ci_95": [
+          2,
+          55
+        ]
+      },
+      "2876": {
+        "score_ci_95": [
+          63.88,
+          73.11
+        ],
+        "rank_ci_95": [
+          2,
+          36
         ]
       },
       "3644": {
         "score_ci_95": [
-          65.76,
-          75.18
-        ],
-        "rank_ci_95": [
-          2,
-          40
-        ]
-      },
-      "7327": {
-        "score_ci_95": [
-          61.62,
-          77.86
+          65.99,
+          75.19
         ],
         "rank_ci_95": [
           1,
-          81
+          22
         ]
       }
     }
