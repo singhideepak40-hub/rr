@@ -93,10 +93,18 @@ def run_full_pipeline(
     # IPL Only
     batters_ipl = ratings_engine.compute_batting_ratings(pi_df, format_mode="ipl")
     bowlers_ipl = ratings_engine.compute_bowling_ratings(pi_df, format_mode="ipl")
+    if not batters_ipl.empty:
+        batters_ipl = squad_engine.tag_retention_status(batters_ipl, "striker_id")
+    if not bowlers_ipl.empty:
+        bowlers_ipl = squad_engine.tag_retention_status(bowlers_ipl, "bowler_id")
 
     # T20I Only
     batters_t20i = ratings_engine.compute_batting_ratings(pi_df, format_mode="t20i")
     bowlers_t20i = ratings_engine.compute_bowling_ratings(pi_df, format_mode="t20i")
+    if not batters_t20i.empty:
+        batters_t20i = squad_engine.tag_retention_status(batters_t20i, "striker_id")
+    if not bowlers_t20i.empty:
+        bowlers_t20i = squad_engine.tag_retention_status(bowlers_t20i, "bowler_id")
 
     # Save artifact tables
     batters_combined.to_parquet(os.path.join(artifacts_dir, "ratings_batters_combined.parquet"), index=False)

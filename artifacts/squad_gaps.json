@@ -191,6 +191,61 @@
       "team": "Rajasthan Royals"
     }
   ],
+  "squad_strength": {
+    "overall_rating": 70.6,
+    "batting_rating": 77.0,
+    "bowling_rating": 59.5,
+    "allrounder_rating": 75.5,
+    "total_players": 27,
+    "key_pillars": [
+      {
+        "player_name": "Yashasvi Jaiswal",
+        "role": "Batter",
+        "score": 84.54
+      },
+      {
+        "player_name": "Riyan Parag",
+        "role": "Batter",
+        "score": 79.81
+      },
+      {
+        "player_name": "Shimron Hetmyer",
+        "role": "Batter",
+        "score": 77.86
+      },
+      {
+        "player_name": "Dasun Shanaka",
+        "role": "Batter",
+        "score": 76.88
+      },
+      {
+        "player_name": "Ravindra Jadeja",
+        "role": "All-Rounder",
+        "score": 75.75
+      },
+      {
+        "player_name": "Sam Curran",
+        "role": "All-Rounder",
+        "score": 75.34
+      },
+      {
+        "player_name": "Donovan Ferreira",
+        "role": "Batter",
+        "score": 74.27
+      }
+    ],
+    "core_strengths": [
+      "Elite Top-Order Crisis Resilience (95.0 vs 95.0 Benchmark) driven by Yashasvi Jaiswal (84.5) & Riyan Parag (79.8)",
+      "High-Reliability All-Round Finishing with Ravindra Jadeja (75.8) & Sam Curran (75.3)",
+      "Solid Middle-Overs Power with Shimron Hetmyer (77.9) & Dasun Shanaka (76.9)"
+    ],
+    "critical_vulnerabilities": [
+      "Death Bowling Lockdown Deficit (-10.0 vs Benchmark) \u2014 lack of specialist death execution beyond Jofra Archer",
+      "Powerplay Strike Pacing Deficit (-6.0 vs Benchmark) \u2014 low early-wicket threat in high-stakes starts",
+      "Spin Defense Depth when accelerating in middle overs 7-15 against quality wrist spin"
+    ],
+    "auction_imperative": "Target 2 elite specialist death-overs pace bowlers (e.g. Adam Zampa / Naveen ul Haq / FazalHaq Farooqi) and 1 high-SR middle-order counter-attacker (e.g. Andre Russell / Mohammad Nawaz)."
+  },
   "tactical_gaps": [
     {
       "scenario_key": "death_bowling",
@@ -228,26 +283,6 @@
           "current_team": "Auction Pool",
           "stat_line": "Pressure Econ: 10.31 (Delta: +2.93)",
           "fit_rationale": "Free agent in auction pool; provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
-        }
-      ],
-      "potential_trade_targets": [
-        {
-          "player_id": 2933,
-          "player_name": "Jasprit Bumrah",
-          "role": "Bowler",
-          "score": 74.54,
-          "current_team": "Mumbai Indians",
-          "stat_line": "Pressure Econ: 8.22 (Delta: +1.73)",
-          "fit_rationale": "Contracted to Mumbai Indians; would require high-value franchise trade/transfer."
-        },
-        {
-          "player_id": 781,
-          "player_name": "Sunil Narine",
-          "role": "All-Rounder",
-          "score": 73.26,
-          "current_team": "Kolkata Knight Riders",
-          "stat_line": "Pressure Econ: 8.29 (Delta: +1.77)",
-          "fit_rationale": "Contracted to Kolkata Knight Riders; would require high-value franchise trade/transfer."
         }
       ]
     },
@@ -288,26 +323,6 @@
           "stat_line": "Pressure Econ: 10.31 (Delta: +2.93)",
           "fit_rationale": "Free agent in auction pool; provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
         }
-      ],
-      "potential_trade_targets": [
-        {
-          "player_id": 2933,
-          "player_name": "Jasprit Bumrah",
-          "role": "Bowler",
-          "score": 74.54,
-          "current_team": "Mumbai Indians",
-          "stat_line": "Pressure Econ: 8.22 (Delta: +1.73)",
-          "fit_rationale": "Contracted to Mumbai Indians; would require high-value franchise trade/transfer."
-        },
-        {
-          "player_id": 781,
-          "player_name": "Sunil Narine",
-          "role": "All-Rounder",
-          "score": 73.26,
-          "current_team": "Kolkata Knight Riders",
-          "stat_line": "Pressure Econ: 8.29 (Delta: +1.77)",
-          "fit_rationale": "Contracted to Kolkata Knight Riders; would require high-value franchise trade/transfer."
-        }
       ]
     },
     {
@@ -346,26 +361,6 @@
           "current_team": "Auction Pool",
           "stat_line": "Pressure SR: 173.1 (Delta: +73.5)",
           "fit_rationale": "Free agent in auction pool; supplies elite Death Overs Chase Finishing (Overs 16-20) execution without franchise trade barrier."
-        }
-      ],
-      "potential_trade_targets": [
-        {
-          "player_id": 6396,
-          "player_name": "Tim David",
-          "role": "Batter",
-          "score": 87.54,
-          "current_team": "Royal Challengers Bengaluru",
-          "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
-          "fit_rationale": "Contracted to Royal Challengers Bengaluru; would require high-value franchise trade/transfer."
-        },
-        {
-          "player_id": 6288,
-          "player_name": "Shubman Gill",
-          "role": "Batter",
-          "score": 87.38,
-          "current_team": "Gujarat Titans",
-          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
-          "fit_rationale": "Contracted to Gujarat Titans; would require high-value franchise trade/transfer."
         }
       ]
     },
@@ -406,26 +401,6 @@
           "stat_line": "Pressure SR: 173.1 (Delta: +73.5)",
           "fit_rationale": "Free agent in auction pool; supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution without franchise trade barrier."
         }
-      ],
-      "potential_trade_targets": [
-        {
-          "player_id": 6396,
-          "player_name": "Tim David",
-          "role": "Batter",
-          "score": 87.54,
-          "current_team": "Royal Challengers Bengaluru",
-          "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
-          "fit_rationale": "Contracted to Royal Challengers Bengaluru; would require high-value franchise trade/transfer."
-        },
-        {
-          "player_id": 6288,
-          "player_name": "Shubman Gill",
-          "role": "Batter",
-          "score": 87.38,
-          "current_team": "Gujarat Titans",
-          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
-          "fit_rationale": "Contracted to Gujarat Titans; would require high-value franchise trade/transfer."
-        }
       ]
     },
     {
@@ -464,26 +439,6 @@
           "current_team": "Auction Pool",
           "stat_line": "Pressure SR: 173.1 (Delta: +73.5)",
           "fit_rationale": "Free agent in auction pool; supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution without franchise trade barrier."
-        }
-      ],
-      "potential_trade_targets": [
-        {
-          "player_id": 6396,
-          "player_name": "Tim David",
-          "role": "Batter",
-          "score": 87.54,
-          "current_team": "Royal Challengers Bengaluru",
-          "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
-          "fit_rationale": "Contracted to Royal Challengers Bengaluru; would require high-value franchise trade/transfer."
-        },
-        {
-          "player_id": 6288,
-          "player_name": "Shubman Gill",
-          "role": "Batter",
-          "score": 87.38,
-          "current_team": "Gujarat Titans",
-          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
-          "fit_rationale": "Contracted to Gujarat Titans; would require high-value franchise trade/transfer."
         }
       ]
     }

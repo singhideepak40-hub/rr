@@ -123,10 +123,10 @@ def get_rankings(
     id_col = "striker_id" if category == "batters" else "bowler_id"
     df = DATA_CACHE["squad_engine"].tag_retention_status(df, id_col)
 
-    if role != "all":
+    if role and isinstance(role, str) and role != "all":
         df = df[df["role"] == role]
 
-    if team != "all":
+    if team and isinstance(team, str) and team != "all":
         if team.lower() in ["rr", "rajasthan royals"]:
             df = df[df["current_team"] == "Rajasthan Royals"]
         elif team.lower() in ["auction", "auction pool", "free agent", "auction target"]:
@@ -134,7 +134,7 @@ def get_rankings(
         else:
             df = df[df["current_team"].str.lower() == team.lower()]
 
-    if retention != "all":
+    if retention and isinstance(retention, str) and retention != "all":
         if retention in ["RR Squad", "rr"]:
             df = df[df["current_team"] == "Rajasthan Royals"]
         elif retention in ["Auction target", "auction"]:
@@ -143,7 +143,7 @@ def get_rankings(
             df = df[df["retention_status"] == retention]
 
     name_col = "striker_name_clean" if category == "batters" else "bowler_name_clean"
-    if search:
+    if search and isinstance(search, str):
         df = df[df[name_col].str.contains(search, case=False, na=False)]
 
     df = df.sort_values("reliability_score", ascending=False).reset_index(drop=True)

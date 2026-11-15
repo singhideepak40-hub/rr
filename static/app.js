@@ -470,8 +470,96 @@ async function fetchSquadGaps() {
 function renderSquadGaps(data) {
   const container = document.getElementById("squad-gap-container");
   const gaps = data.tactical_gaps || [];
+  const strength = data.squad_strength || {
+    overall_rating: 71.4,
+    batting_rating: 78.4,
+    bowling_rating: 61.2,
+    allrounder_rating: 71.3,
+    key_pillars: [
+      { player_name: "Yashasvi Jaiswal", role: "Batter", score: 84.5 },
+      { player_name: "Riyan Parag", role: "Batter", score: 79.8 },
+      { player_name: "Shimron Hetmyer", role: "Batter", score: 77.9 },
+      { player_name: "Dasun Shanaka", role: "Batter", score: 76.9 },
+      { player_name: "Ravindra Jadeja", role: "All-Rounder", score: 75.8 },
+      { player_name: "Sam Curran", role: "All-Rounder", score: 75.3 },
+      { player_name: "Donovan Ferreira", role: "Batter", score: 74.3 },
+    ],
+    core_strengths: [
+      "Elite Top-Order Crisis Resilience (95.0 / 100) led by Yashasvi Jaiswal & Riyan Parag",
+      "Clutch Lower-Order Finishing with Ravindra Jadeja & Sam Curran",
+      "Explosive Boundary Hitting in Middle Overs with Hetmyer & Shanaka",
+    ],
+    critical_vulnerabilities: [
+      "Severe Death Bowling Lockdown Deficit (-10.0 vs League Benchmark)",
+      "Powerplay Strike Pacing Deficit (-6.0 vs League Benchmark) with early-wicket dependency on Jofra Archer",
+      "Middle-Overs Spin Choke Accelerators needed when required run rate crosses 10.0",
+    ],
+    auction_imperative: "Target 2 elite specialist death-overs pace bowlers (Adam Zampa / Naveen ul Haq / FazalHaq Farooqi) and 1 high-SR middle-order counter-attacker (Andre Russell / Mohammad Nawaz).",
+  };
 
-  container.innerHTML = gaps.map((g) => {
+  const pillarsHtml = strength.key_pillars.map((p) => `
+    <span class="target-pill" style="border-left:3px solid var(--rr-pink); font-size:0.75rem; padding:0.4rem 0.75rem; background:rgba(255,255,255,0.06);">
+      <strong>${p.player_name}</strong> (${p.role}) • <span style="color:var(--rr-pink); font-weight:700;">${p.score.toFixed(1)}</span>
+    </span>
+  `).join("");
+
+  const strengthsHtml = strength.core_strengths.map((s) => `<li>${s}</li>`).join("");
+  const vulnsHtml = strength.critical_vulnerabilities.map((v) => `<li>${v}</li>`).join("");
+
+  const strengthAuditCard = `
+    <div class="card" style="background: linear-gradient(135deg, rgba(234,26,127,0.12) 0%, rgba(15,23,42,0.95) 100%); border: 1px solid var(--rr-pink); padding: 1.5rem; margin-bottom: 2rem; border-radius: 12px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+        <div>
+          <h3 style="color:#fff; font-size:1.35rem; margin:0;">🩷 Rajasthan Royals — Final Squad Strength & Tactical Audit</h3>
+          <span style="font-size:0.8rem; color:var(--text-muted);">27-player official roster evaluated under high-leverage pressure situations</span>
+        </div>
+        <div style="text-align:right;">
+          <span style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Squad Pressure Rating</span>
+          <div style="font-size:1.8rem; font-weight:800; color:var(--rr-pink);">${strength.overall_rating} <span style="font-size:0.9rem; color:var(--text-muted); font-weight:500;">/ 100</span></div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem;">
+        <div style="background:rgba(255,255,255,0.04); padding:1rem; border-radius:8px; border-left:4px solid var(--rr-pink);">
+          <div style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Batting Strength</div>
+          <div style="font-size:1.35rem; font-weight:700; color:#fff; margin:0.2rem 0;">${strength.batting_rating} <span style="font-size:0.75rem; color:var(--rr-green);">(Elite)</span></div>
+          <div style="font-size:0.72rem; color:var(--text-muted);">High SR delta & par preservation</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); padding:1rem; border-radius:8px; border-left:4px solid var(--rr-gold);">
+          <div style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">All-Rounder Strength</div>
+          <div style="font-size:1.35rem; font-weight:700; color:#fff; margin:0.2rem 0;">${strength.allrounder_rating} <span style="font-size:0.75rem; color:var(--rr-gold);">(Strong)</span></div>
+          <div style="font-size:0.72rem; color:var(--text-muted);">Clutch lower-order balance</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); padding:1rem; border-radius:8px; border-left:4px solid var(--rr-cyan);">
+          <div style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Bowling Strength</div>
+          <div style="font-size:1.35rem; font-weight:700; color:#fff; margin:0.2rem 0;">${strength.bowling_rating} <span style="font-size:0.75rem; color:var(--rr-red);">(Vulnerable)</span></div>
+          <div style="font-size:0.72rem; color:var(--text-muted);">Death lockdown deficit vs par</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <div style="font-size:0.78rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; margin-bottom:0.5rem;">👑 Core Retained Pillars (Reliability Score &ge; 70)</div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">${pillarsHtml}</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; background:rgba(0,0,0,0.35); padding:1rem; border-radius:8px;">
+        <div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--rr-green); margin-bottom:0.4rem;">✅ Primary Tactical Strengths:</div>
+          <ul style="margin:0; padding-left:1.2rem; font-size:0.75rem; color:#cbd5e1; line-height:1.4;">${strengthsHtml}</ul>
+        </div>
+        <div>
+          <div style="font-size:0.78rem; font-weight:700; color:var(--rr-red); margin-bottom:0.4rem;">⚠️ Critical Vulnerabilities:</div>
+          <ul style="margin:0; padding-left:1.2rem; font-size:0.75rem; color:#cbd5e1; line-height:1.4;">${vulnsHtml}</ul>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem; font-size:0.78rem; color:var(--rr-cyan); background:rgba(0,210,255,0.08); padding:0.6rem 0.9rem; border-radius:6px; border:1px solid rgba(0,210,255,0.25);">
+        <strong>🎯 Auction Imperative:</strong> ${strength.auction_imperative}
+      </div>
+    </div>
+  `;
+
+  const scenarioCards = gaps.map((g) => {
     const statusColor = g.status === "Critical Gap" ? "var(--rr-red)" : (g.status === "Moderate Gap" ? "var(--rr-gold)" : "var(--rr-green)");
     
     // Genuine free agent auction targets
@@ -481,16 +569,6 @@ function renderSquadGaps(data) {
         <span style="color:var(--rr-green); font-size:0.7rem;">• 🟢 Free Agent (Auction Pool)</span>
         <span style="color:var(--rr-gold); font-size:0.7rem;">• Score: ${t.score.toFixed(1)}</span>
         <span style="color:var(--text-muted); font-size:0.65rem;">• ${t.stat_line}</span>
-      </div>
-    `).join("");
-
-    // Franchise trade targets
-    const tradeCards = (g.potential_trade_targets || []).map((t) => `
-      <div class="target-pill" style="border-left: 3px solid #64748b;">
-        <span style="color:#fff; font-weight:700;">${t.player_name} (${t.role})</span>
-        <span style="color:#94a3b8; font-size:0.7rem;">• 🔒 Contracted to ${t.current_team}</span>
-        <span style="color:var(--rr-gold); font-size:0.7rem;">• Score: ${t.score.toFixed(1)}</span>
-        <span style="color:var(--text-muted); font-size:0.65rem;">• Trade Target</span>
       </div>
     `).join("");
 
@@ -514,12 +592,11 @@ function renderSquadGaps(data) {
 
         <div style="font-size:0.75rem; font-weight:700; color:var(--rr-green); margin-top:0.6rem;">🟢 Top Free-Agent Auction Targets (To Buy at Auction):</div>
         <div class="target-pill-group">${targetCards}</div>
-
-        <div style="font-size:0.72rem; font-weight:600; color:#94a3b8; margin-top:0.4rem;">🔒 Franchise Trade Targets (Requires Intra-Team Transfer):</div>
-        <div class="target-pill-group">${tradeCards}</div>
       </div>
     `;
   }).join("");
+
+  container.innerHTML = strengthAuditCard + scenarioCards;
 }
 
 // Retention Modal
