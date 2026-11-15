@@ -1,0 +1,247 @@
+{
+  "retained_count": 6,
+  "retained_players": [
+    {
+      "player_id": 2258,
+      "player_name": "Sanju Samson",
+      "role": "Batter / Wicketkeeper",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 18.0,
+      "batting_type": "RHB",
+      "bowling_type": "Right-arm offbreak",
+      "notes": "Captain & primary top-order anchor/finisher"
+    },
+    {
+      "player_id": 6819,
+      "player_name": "Yashasvi Jaiswal",
+      "role": "Batter",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 18.0,
+      "batting_type": "LHB",
+      "bowling_type": "Right-arm Leg-Break",
+      "notes": "Explosive powerplay opener"
+    },
+    {
+      "player_id": 6423,
+      "player_name": "Riyan Parag",
+      "role": "All-Rounder",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 14.0,
+      "batting_type": "RHB",
+      "bowling_type": "Right-arm Leg-Break",
+      "notes": "Dynamic No. 4 and spin option"
+    },
+    {
+      "player_id": 7260,
+      "player_name": "Dhruv Jurel",
+      "role": "Batter / Wicketkeeper",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 14.0,
+      "batting_type": "RHB",
+      "bowling_type": "None",
+      "notes": "Middle/death-overs clutch finisher"
+    },
+    {
+      "player_id": 3297,
+      "player_name": "Shimron Hetmyer",
+      "role": "Batter",
+      "retention_type": "Retained (Overseas)",
+      "retention_price_cr": 11.0,
+      "batting_type": "LHB",
+      "bowling_type": "None",
+      "notes": "Left-handed death-overs boundary hitter"
+    },
+    {
+      "player_id": 2411,
+      "player_name": "Sandeep Sharma",
+      "role": "Bowler",
+      "retention_type": "Retained (Uncapped)",
+      "retention_price_cr": 4.0,
+      "batting_type": "RHB",
+      "bowling_type": "Right-arm medium",
+      "notes": "Swing upfront and wide-yorker specialist at death"
+    }
+  ],
+  "tactical_gaps": [
+    {
+      "scenario_key": "death_bowling",
+      "scenario_name": "Death Bowling Lockdown (Overs 16-20)",
+      "description": "Defending tight totals in overs 16-20 against aggressive death-overs hitters.",
+      "type": "bowling",
+      "rr_score": 29.7,
+      "league_benchmark": 46.0,
+      "deficit": 16.3,
+      "status": "Critical Gap",
+      "recommended_targets": [
+        {
+          "player_id": 5979,
+          "player_name": "Abrar Ahmed",
+          "role": "Bowler",
+          "score": 76.86,
+          "stat_line": "Pressure Econ: 7.13 (Delta: +0.60)",
+          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
+        },
+        {
+          "player_id": 6450,
+          "player_name": "Mujeeb Ur Rahman",
+          "role": "All-Rounder",
+          "score": 74.72,
+          "stat_line": "Pressure Econ: 7.46 (Delta: +0.60)",
+          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
+        },
+        {
+          "player_id": 34485,
+          "player_name": "Sufiyan Muqeem",
+          "role": "Bowler",
+          "score": 73.13,
+          "stat_line": "Pressure Econ: 6.67 (Delta: +0.74)",
+          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
+        }
+      ]
+    },
+    {
+      "scenario_key": "top_order_crisis",
+      "scenario_name": "Top Order Crisis Resilience (Powerplay 1-6)",
+      "description": "Rebuilding momentum and par preservation when early top-order wickets fall.",
+      "type": "batting",
+      "rr_score": 95.0,
+      "league_benchmark": 95.0,
+      "deficit": 0.0,
+      "status": "Strong Asset",
+      "recommended_targets": [
+        {
+          "player_id": 23450,
+          "player_name": "Sai Sudharsan",
+          "role": "Batter",
+          "score": 87.29,
+          "stat_line": "Pressure SR: 216.3 (Delta: +80.8)",
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
+        },
+        {
+          "player_id": 6396,
+          "player_name": "Tim David",
+          "role": "Batter",
+          "score": 87.27,
+          "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
+        },
+        {
+          "player_id": 6288,
+          "player_name": "Shubman Gill",
+          "role": "Batter",
+          "score": 87.26,
+          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR deficit."
+        }
+      ]
+    },
+    {
+      "scenario_key": "death_batting",
+      "scenario_name": "Death Overs Chase Finishing (Overs 16-20)",
+      "description": "Boundary execution and finishing matches when required run rate is above 10.0.",
+      "type": "batting",
+      "rr_score": 66.7,
+      "league_benchmark": 60.6,
+      "deficit": -6.1,
+      "status": "Strong Asset",
+      "recommended_targets": [
+        {
+          "player_id": 23450,
+          "player_name": "Sai Sudharsan",
+          "role": "Batter",
+          "score": 87.29,
+          "stat_line": "Pressure SR: 216.3 (Delta: +80.8)",
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
+        },
+        {
+          "player_id": 6396,
+          "player_name": "Tim David",
+          "role": "Batter",
+          "score": 87.27,
+          "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
+        },
+        {
+          "player_id": 6288,
+          "player_name": "Shubman Gill",
+          "role": "Batter",
+          "score": 87.26,
+          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR deficit."
+        }
+      ]
+    },
+    {
+      "scenario_key": "middle_spin_attack",
+      "scenario_name": "Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin)",
+      "description": "Accelerating and breaking spin choke in overs 7-15 without losing wickets.",
+      "type": "batting",
+      "rr_score": 76.4,
+      "league_benchmark": 64.5,
+      "deficit": -11.9,
+      "status": "Strong Asset",
+      "recommended_targets": [
+        {
+          "player_id": 23450,
+          "player_name": "Sai Sudharsan",
+          "role": "Batter",
+          "score": 87.29,
+          "stat_line": "Pressure SR: 216.3 (Delta: +80.8)",
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
+        },
+        {
+          "player_id": 6396,
+          "player_name": "Tim David",
+          "role": "Batter",
+          "score": 87.27,
+          "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
+        },
+        {
+          "player_id": 6288,
+          "player_name": "Shubman Gill",
+          "role": "Batter",
+          "score": 87.26,
+          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR deficit."
+        }
+      ]
+    },
+    {
+      "scenario_key": "powerplay_wickets",
+      "scenario_name": "Powerplay Strike Pacing (Overs 1-6)",
+      "description": "Taking early wickets and strangling scoring in high-stakes powerplay starts.",
+      "type": "bowling",
+      "rr_score": 41.7,
+      "league_benchmark": 20.0,
+      "deficit": -21.7,
+      "status": "Strong Asset",
+      "recommended_targets": [
+        {
+          "player_id": 5979,
+          "player_name": "Abrar Ahmed",
+          "role": "Bowler",
+          "score": 76.86,
+          "stat_line": "Pressure Econ: 7.13 (Delta: +0.60)",
+          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
+        },
+        {
+          "player_id": 6450,
+          "player_name": "Mujeeb Ur Rahman",
+          "role": "All-Rounder",
+          "score": 74.72,
+          "stat_line": "Pressure Econ: 7.46 (Delta: +0.60)",
+          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
+        },
+        {
+          "player_id": 34485,
+          "player_name": "Sufiyan Muqeem",
+          "role": "Bowler",
+          "score": 73.13,
+          "stat_line": "Pressure Econ: 6.67 (Delta: +0.74)",
+          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "retentions": [
+    {
+      "player_id": 2258,
+      "player_name": "Sanju Samson",
+      "role": "Batter / Wicketkeeper",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 18.0,
+      "batting_type": "RHB",
+      "bowling_type": "Right-arm offbreak",
+      "notes": "Captain & primary top-order anchor/finisher"
+    },
+    {
+      "player_id": 6819,
+      "player_name": "Yashasvi Jaiswal",
+      "role": "Batter",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 18.0,
+      "batting_type": "LHB",
+      "bowling_type": "Right-arm Leg-Break",
+      "notes": "Explosive powerplay opener"
+    },
+    {
+      "player_id": 6423,
+      "player_name": "Riyan Parag",
+      "role": "All-Rounder",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 14.0,
+      "batting_type": "RHB",
+      "bowling_type": "Right-arm Leg-Break",
+      "notes": "Dynamic No. 4 and spin option"
+    },
+    {
+      "player_id": 7260,
+      "player_name": "Dhruv Jurel",
+      "role": "Batter / Wicketkeeper",
+      "retention_type": "Retained (Capped)",
+      "retention_price_cr": 14.0,
+      "batting_type": "RHB",
+      "bowling_type": "None",
+      "notes": "Middle/death-overs clutch finisher"
+    },
+    {
+      "player_id": 3297,
+      "player_name": "Shimron Hetmyer",
+      "role": "Batter",
+      "retention_type": "Retained (Overseas)",
+      "retention_price_cr": 11.0,
+      "batting_type": "LHB",
+      "bowling_type": "None",
+      "notes": "Left-handed death-overs boundary hitter"
+    },
+    {
+      "player_id": 2411,
+      "player_name": "Sandeep Sharma",
+      "role": "Bowler",
+      "retention_type": "Retained (Uncapped)",
+      "retention_price_cr": 4.0,
+      "batting_type": "RHB",
+      "bowling_type": "Right-arm medium",
+      "notes": "Swing upfront and wide-yorker specialist at death"
+    }
+  ],
+  "recent_squad_pool": [
+    {"player_id": 3298, "player_name": "Jofra Archer", "role": "Bowler", "status": "Auction Target / RTM"},
+    {"player_id": 7312, "player_name": "Nandre Burger", "role": "Bowler", "status": "Auction Target / RTM"},
+    {"player_id": 7503, "player_name": "Ravi Bishnoi", "role": "Bowler", "status": "Auction Target"},
+    {"player_id": 4409, "player_name": "Sam Curran", "role": "All-Rounder", "status": "Auction Target"},
+    {"player_id": 152, "player_name": "Ravindra Jadeja", "role": "All-Rounder", "status": "Auction Target"},
+    {"player_id": 6806, "player_name": "Tushar Deshpande", "role": "Bowler", "status": "Auction Target"},
+    {"player_id": 50284, "player_name": "Vaibhav Sooryavanshi", "role": "Batter", "status": "Auction Target"}
+  ]
+}

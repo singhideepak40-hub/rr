@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperRR Selector Season 2 — Rajasthan Royals Pressure Hub</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Chart.js via CDN for responsive radar and interactive charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">RR</div>
+      <div class="brand-text">
+        <h1>SuperRR Selector 2.0</h1>
+        <p>Rajasthan Royals • IPL 2027 Auction War Room</p>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-tab="rankings">🏆 Official Rankings</button>
+      <button class="nav-btn" data-tab="profile">👤 Player 360 Profile</button>
+      <button class="nav-btn" data-tab="compare">⚔️ Player Compare</button>
+      <button class="nav-btn" data-tab="explorer">⚡ Pressure Explorer</button>
+      <button class="nav-btn" data-tab="squad">👑 Squad Fit (RR)</button>
+      <button class="nav-btn" data-tab="methodology">📊 Methodology & Validation</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- TAB 1: RANKINGS -->
+    <section id="tab-rankings" class="tab-pane active">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>Pressure Performance Leaderboard (Top 10 Official Selection)</span>
+          </div>
+          <div>
+            <a href="/outputs/top10_batters.csv" download class="btn btn-sm">⬇ Top 10 Batters CSV</a>
+            <a href="/outputs/top10_bowlers.csv" download class="btn btn-sm">⬇ Top 10 Bowlers CSV</a>
+            <a href="/outputs/full_ratings.csv" download class="btn btn-sm btn-primary">⬇ Full Ratings CSV</a>
+          </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-bar">
+          <div class="filter-group">
+            <span class="filter-label">Category:</span>
+            <select id="filter-category" onchange="fetchRankings()">
+              <option value="batters">Batters Under Pressure</option>
+              <option value="bowlers">Bowlers Under Pressure</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Format:</span>
+            <select id="filter-format" onchange="fetchRankings()">
+              <option value="combined">Combined (IPL + T20I Weighted)</option>
+              <option value="ipl">IPL Only</option>
+              <option value="t20i">T20I Only</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Role:</span>
+            <select id="filter-role" onchange="fetchRankings()">
+              <option value="all">All Roles</option>
+              <option value="Batter">Specialist Batter</option>
+              <option value="Bowler">Specialist Bowler</option>
+              <option value="All-Rounder">All-Rounder</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">RR Status:</span>
+            <select id="filter-retention" onchange="fetchRankings()">
+              <option value="all">All Players</option>
+              <option value="Retain candidate">Retain Candidate</option>
+              <option value="Auction target">Auction Target</option>
+            </select>
+          </div>
+
+          <div class="filter-group" style="margin-left: auto;">
+            <input type="text" id="filter-search" placeholder="Search player name..." oninput="debounceFetchRankings()">
+          </div>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="table-responsive">
+          <table id="rankings-table">
+            <thead>
+              <tr id="rankings-table-head">
+                <!-- Dynamically populated -->
+              </tr>
+            </thead>
+            <tbody id="rankings-table-body">
+              <tr><td colspan="9" style="text-align:center; padding: 2rem;">Loading pressure performance data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: PLAYER PROFILE -->
+    <section id="tab-profile" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>Player 360 Diagnostic Dossier</span>
+          </div>
+          <div style="display:flex; gap:0.5rem; align-items:center;">
+            <select id="profile-player-select" onchange="loadSelectedProfile()" style="min-width: 240px;">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+        </div>
+
+        <div id="profile-content">
+          <p style="text-align:center; padding: 2rem; color: var(--text-muted);">Select a player above or click any player in the Rankings table to view their dossier.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: COMPARE PLAYERS -->
+    <section id="tab-compare" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>Head-to-Head Radar Comparison</span>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filter-group">
+            <span class="filter-label">Player 1:</span>
+            <select id="compare-p1" onchange="runComparison()"></select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Player 2:</span>
+            <select id="compare-p2" onchange="runComparison()"></select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Player 3 (Optional):</span>
+            <select id="compare-p3" onchange="runComparison()">
+              <option value="">-- None --</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center;">
+          <div style="max-height: 440px; display:flex; justify-content:center;">
+            <canvas id="radarChart"></canvas>
+          </div>
+          <div id="compare-stats-table" class="table-responsive">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: PRESSURE EXPLORER SIMULATOR -->
+    <section id="tab-explorer" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>Real-Time Pressure / Leverage Simulator</span>
+          </div>
+          <span style="font-size:0.8rem; color:var(--rr-cyan);">Live Match-State Inference Engine</span>
+        </div>
+
+        <div class="simulator-grid">
+          <!-- Left: Sliders -->
+          <div>
+            <div class="filter-bar" style="margin-bottom: 1.5rem;">
+              <div class="filter-group">
+                <span class="filter-label">Innings:</span>
+                <select id="sim-innings" onchange="updateSimulation()">
+                  <option value="2">Innings 2 (Target Chase)</option>
+                  <option value="1">Innings 1 (Setting Par)</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <span class="filter-label">Match Stakes:</span>
+                <select id="sim-knockout" onchange="updateSimulation()">
+                  <option value="0">Regular League Match</option>
+                  <option value="1">Knockout / Playoff / Final (1.15x Multiplier)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Balls Remaining:</span>
+                <span id="val-balls-left" class="slider-value">18</span>
+              </div>
+              <input type="range" id="sim-balls-left" min="1" max="120" value="18" oninput="updateSimulation()">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Wickets Lost:</span>
+                <span id="val-wickets-lost" class="slider-value">5</span>
+              </div>
+              <input type="range" id="sim-wickets-lost" min="0" max="9" value="5" oninput="updateSimulation()">
+            </div>
+
+            <div class="slider-group" id="group-runs-needed">
+              <div class="slider-header">
+                <span id="label-runs-needed">Runs Needed to Win:</span>
+                <span id="val-runs-needed" class="slider-value">38</span>
+              </div>
+              <input type="range" id="sim-runs-needed" min="1" max="150" value="38" oninput="updateSimulation()">
+            </div>
+
+            <!-- Historical similar deliveries -->
+            <div style="margin-top: 1.5rem;">
+              <h4 style="font-size:0.9rem; margin-bottom: 0.5rem; color:var(--text-muted);">Sample Historical Deliveries in Similar State:</h4>
+              <div id="sim-similar-balls"></div>
+            </div>
+          </div>
+
+          <!-- Right: Gauges -->
+          <div>
+            <div class="meter-card">
+              <span style="font-size:0.8rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Pressure / Leverage Index (PI)</span>
+              <div id="meter-pi" class="meter-val val-pink">0.912</div>
+              <div id="badge-bucket" class="badge" style="background:var(--rr-pink); color:#fff; font-size:0.85rem; padding:0.35rem 0.8rem; margin-top:0.3rem;">Extreme Crisis</div>
+              <p id="desc-bucket" style="font-size:0.75rem; color:var(--text-muted); margin-top:0.6rem;"></p>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="meter-card">
+                <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Win Probability (Chase)</span>
+                <div id="meter-wp" class="meter-val val-cyan">42.5%</div>
+                <span style="font-size:0.7rem; color:var(--text-muted);">Calibrated GBDT</span>
+              </div>
+              <div class="meter-card">
+                <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">Required Run Rate</span>
+                <div id="meter-rrr" class="meter-val" style="color:var(--rr-gold);">12.67</div>
+                <span style="font-size:0.7rem; color:var(--text-muted);">Runs / Over</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: SQUAD FIT & AUCTION STRATEGY -->
+    <section id="tab-squad" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>Rajasthan Royals Tactical Squad Gap Analyzer</span>
+          </div>
+          <button class="btn btn-sm btn-primary" onclick="openRetentionModal()">✏ Edit Official Retentions</button>
+        </div>
+
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom: 1.5rem;">
+          Evaluating Rajasthan Royals' retained core against 5 vital pressure dimensions to identify tactical deficits and recommend high-impact auction targets.
+        </p>
+
+        <div id="squad-gap-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: METHODOLOGY & VALIDATION -->
+    <section id="tab-methodology" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>Methodology, Mathematical Proofs & Model Validation</span>
+          </div>
+          <div>
+            <a href="/outputs/methodology_notes.md" target="_blank" class="btn btn-sm">📄 View Markdown Report</a>
+          </div>
+        </div>
+
+        <div id="methodology-metrics-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div class="card-title" style="margin-bottom: 1rem;">Exported Publication Charts (outputs/)</div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
+          <div class="card" style="padding:1rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Pressure Index Distribution & Progression</h4>
+            <img src="/outputs/pi_distribution.png" style="width:100%; border-radius:8px;" alt="PI Distribution">
+          </div>
+          <div class="card" style="padding:1rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Win Probability Model Calibration</h4>
+            <img src="/outputs/wp_calibration.png" style="width:100%; border-radius:8px;" alt="WP Calibration">
+          </div>
+          <div class="card" style="padding:1rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Split-Half Reliability (Odd vs Even Matches)</h4>
+            <img src="/outputs/split_half_correlation.png" style="width:100%; border-radius:8px;" alt="Split Half">
+          </div>
+          <div class="card" style="padding:1rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Top 10 Batters Reliability Scores</h4>
+            <img src="/outputs/top10_batters_bars.png" style="width:100%; border-radius:8px;" alt="Top 10 Batters">
+          </div>
+          <div class="card" style="padding:1rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Top 10 Bowlers Reliability Scores</h4>
+            <img src="/outputs/top10_bowlers_bars.png" style="width:100%; border-radius:8px;" alt="Top 10 Bowlers">
+          </div>
+          <div class="card" style="padding:1rem;">
+            <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Sample Multi-Player Radar Comparison</h4>
+            <img src="/outputs/player_radar_sample.png" style="width:100%; border-radius:8px;" alt="Radar Sample">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>SuperRR Selector Season 2 — Proprietary Rajasthan Royals Hackathon Analytics System • Fully Reproducible & Data-Driven</p>
+  </footer>
+
+  <!-- Retention Editor Modal -->
+  <div id="retention-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:200; align-items:center; justify-content:center;">
+    <div class="card" style="max-width:650px; width:90%; max-height:85vh; overflow-y:auto;">
+      <div class="card-header">
+        <div class="card-title">Edit Rajasthan Royals Retentions (rr_squad.json)</div>
+        <button class="btn btn-sm" onclick="closeRetentionModal()">✕</button>
+      </div>
+      <textarea id="retention-json-editor" style="width:100%; height:300px; background:#0b101e; color:#fff; border:1px solid var(--border-color); border-radius:8px; padding:1rem; font-family:monospace; font-size:0.8rem;"></textarea>
+      <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem;">
+        <button class="btn" onclick="closeRetentionModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveRetentionChanges()">Save Retentions</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

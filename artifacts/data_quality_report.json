@@ -1,0 +1,27 @@
+{
+  "total_raw_deliveries": 200999,
+  "super_over_deliveries_excluded": 38,
+  "clean_deliveries": 200961,
+  "legal_deliveries": 192412,
+  "illegal_deliveries": 8549,
+  "total_matches": 883,
+  "matches_with_deliveries": 867,
+  "revised_target_matches": 23,
+  "matches_with_winner": 842,
+  "format_breakdown": {
+    "T20I": 482,
+    "IPL": 371,
+    "Other T20": 30
+  },
+  "season_breakdown": {
+    "2022": 180,
+    "2023": 140,
+    "2024": 201,
+    "2025": 216,
+    "2026": 146
+  },
+  "total_bowler_wickets": 10261,
+  "total_run_outs": 598,
+  "runs_includes_extras": false,
+  "extras_on_illegal_balls": 10088
+}
