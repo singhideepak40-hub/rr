@@ -1,73 +1,193 @@
 {
-  "retentions": [
+  "rr_squad_2026": [
     {
-      "player_id": 2258,
-      "player_name": "Sanju Samson",
-      "role": "Batter / Wicketkeeper",
-      "retention_type": "Retained (Capped)",
-      "retention_price_cr": 18.0,
-      "batting_type": "RHB",
-      "bowling_type": "Right-arm offbreak",
-      "notes": "Captain & primary top-order anchor/finisher"
-    },
-    {
-      "player_id": 6819,
-      "player_name": "Yashasvi Jaiswal",
-      "role": "Batter",
-      "retention_type": "Retained (Capped)",
-      "retention_price_cr": 18.0,
-      "batting_type": "LHB",
-      "bowling_type": "Right-arm Leg-Break",
-      "notes": "Explosive powerplay opener"
-    },
-    {
-      "player_id": 6423,
-      "player_name": "Riyan Parag",
+      "player_id": 152,
+      "player_name": "Ravindra Jadeja",
       "role": "All-Rounder",
-      "retention_type": "Retained (Capped)",
-      "retention_price_cr": 14.0,
-      "batting_type": "RHB",
-      "bowling_type": "Right-arm Leg-Break",
-      "notes": "Dynamic No. 4 and spin option"
+      "pressure_score": 75.75,
+      "team": "Rajasthan Royals"
     },
     {
-      "player_id": 7260,
-      "player_name": "Dhruv Jurel",
-      "role": "Batter / Wicketkeeper",
-      "retention_type": "Retained (Capped)",
-      "retention_price_cr": 14.0,
-      "batting_type": "RHB",
-      "bowling_type": "None",
-      "notes": "Middle/death-overs clutch finisher"
-    },
-    {
-      "player_id": 3297,
-      "player_name": "Shimron Hetmyer",
-      "role": "Batter",
-      "retention_type": "Retained (Overseas)",
-      "retention_price_cr": 11.0,
-      "batting_type": "LHB",
-      "bowling_type": "None",
-      "notes": "Left-handed death-overs boundary hitter"
+      "player_id": 1487,
+      "player_name": "Adam Milne",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
     },
     {
       "player_id": 2411,
       "player_name": "Sandeep Sharma",
       "role": "Bowler",
-      "retention_type": "Retained (Uncapped)",
-      "retention_price_cr": 4.0,
-      "batting_type": "RHB",
-      "bowling_type": "Right-arm medium",
-      "notes": "Swing upfront and wide-yorker specialist at death"
+      "pressure_score": 55.36,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 2436,
+      "player_name": "Dasun Shanaka",
+      "role": "Batter",
+      "pressure_score": 76.88,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 3297,
+      "player_name": "Shimron Hetmyer",
+      "role": "Batter",
+      "pressure_score": 77.86,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 3298,
+      "player_name": "Jofra Archer",
+      "role": "Bowler",
+      "pressure_score": 63.7,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 4409,
+      "player_name": "Sam Curran",
+      "role": "All-Rounder",
+      "pressure_score": 75.34,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 6423,
+      "player_name": "Riyan Parag",
+      "role": "Batter",
+      "pressure_score": 79.81,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 6806,
+      "player_name": "Tushar Deshpande",
+      "role": "Bowler",
+      "pressure_score": 57.93,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 6819,
+      "player_name": "Yashasvi Jaiswal",
+      "role": "Batter",
+      "pressure_score": 84.54,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 7260,
+      "player_name": "Dhruv Jurel",
+      "role": "Batter",
+      "pressure_score": 68.41,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 7269,
+      "player_name": "Sushant Mishra",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 7312,
+      "player_name": "Nandre Burger",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 7503,
+      "player_name": "Ravi Bishnoi",
+      "role": "Bowler",
+      "pressure_score": 60.87,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 7545,
+      "player_name": "Kuldeep Sen",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 8182,
+      "player_name": "Donovan Ferreira",
+      "role": "Batter",
+      "pressure_score": 74.27,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 8580,
+      "player_name": "Yudhvir Singh",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 25139,
+      "player_name": "Shubham Dubey",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 26663,
+      "player_name": "Kwena Maphaka",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 41503,
+      "player_name": "Yash Punja",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 43798,
+      "player_name": "Lhuan Pretorius",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 43965,
+      "player_name": "Emanjot Singh Chahal",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 47523,
+      "player_name": "Aman Rao Perala",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 48557,
+      "player_name": "Vignesh Puthur",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 50284,
+      "player_name": "Vaibhav Sooryavanshi",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 60700,
+      "player_name": "Ravi Singh",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
+    },
+    {
+      "player_id": 67036,
+      "player_name": "Brijesh Sharma",
+      "role": "Player",
+      "pressure_score": 50.0,
+      "team": "Rajasthan Royals"
     }
-  ],
-  "recent_squad_pool": [
-    {"player_id": 3298, "player_name": "Jofra Archer", "role": "Bowler", "status": "Auction Target / RTM"},
-    {"player_id": 7312, "player_name": "Nandre Burger", "role": "Bowler", "status": "Auction Target / RTM"},
-    {"player_id": 7503, "player_name": "Ravi Bishnoi", "role": "Bowler", "status": "Auction Target"},
-    {"player_id": 4409, "player_name": "Sam Curran", "role": "All-Rounder", "status": "Auction Target"},
-    {"player_id": 152, "player_name": "Ravindra Jadeja", "role": "All-Rounder", "status": "Auction Target"},
-    {"player_id": 6806, "player_name": "Tushar Deshpande", "role": "Bowler", "status": "Auction Target"},
-    {"player_id": 50284, "player_name": "Vaibhav Sooryavanshi", "role": "Batter", "status": "Auction Target"}
   ]
 }

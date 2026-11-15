@@ -298,6 +298,9 @@ tr:hover td {
 
 .badge-retained { background: rgba(234, 26, 127, 0.15); color: var(--rr-pink); border: 1px solid rgba(234, 26, 127, 0.4); }
 .badge-target { background: rgba(0, 210, 255, 0.15); color: var(--rr-cyan); border: 1px solid rgba(0, 210, 255, 0.3); }
+.badge-rr { background: rgba(234, 26, 127, 0.2); color: #ff66aa; border: 1px solid rgba(234, 26, 127, 0.5); font-weight: 700; }
+.badge-auction { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.5); font-weight: 700; }
+.badge-other-team { background: rgba(100, 116, 139, 0.2); color: #cbd5e1; border: 1px solid rgba(100, 116, 139, 0.4); font-weight: 600; }
 
 .badge-role-batter { background: rgba(16, 185, 129, 0.15); color: var(--rr-green); }
 .badge-role-bowler { background: rgba(239, 68, 68, 0.15); color: var(--rr-red); }

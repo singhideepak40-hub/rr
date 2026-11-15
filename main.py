@@ -107,26 +107,40 @@ def get_rankings(
     category: str = Query("batters"),
     format_mode: str = Query("combined"),
     role: str = Query("all"),
+    team: str = Query("all"),
     retention: str = Query("all"),
     search: str = Query(None),
     limit: int = Query(50, ge=10, le=200),
 ):
-    """Retrieve ranked players with comprehensive score breakdown, role, and retention tags."""
+    """Retrieve ranked players with comprehensive score breakdown, role, exact IPL team, and retention tags."""
     cache_key = f"{category}_{format_mode}"
     if cache_key not in DATA_CACHE:
         cache_key = f"{category}_combined"
 
     df = DATA_CACHE[cache_key].copy()
 
-    # Tag retention status dynamically
+    # Tag retention status and exact IPL team dynamically
     id_col = "striker_id" if category == "batters" else "bowler_id"
     df = DATA_CACHE["squad_engine"].tag_retention_status(df, id_col)
 
     if role != "all":
         df = df[df["role"] == role]
 
+    if team != "all":
+        if team.lower() in ["rr", "rajasthan royals"]:
+            df = df[df["current_team"] == "Rajasthan Royals"]
+        elif team.lower() in ["auction", "auction pool", "free agent", "auction target"]:
+            df = df[df["current_team"] == "Auction Pool"]
+        else:
+            df = df[df["current_team"].str.lower() == team.lower()]
+
     if retention != "all":
-        df = df[df["retention_status"] == retention]
+        if retention in ["RR Squad", "rr"]:
+            df = df[df["current_team"] == "Rajasthan Royals"]
+        elif retention in ["Auction target", "auction"]:
+            df = df[df["current_team"] == "Auction Pool"]
+        else:
+            df = df[df["retention_status"] == retention]
 
     name_col = "striker_name_clean" if category == "batters" else "bowler_name_clean"
     if search:

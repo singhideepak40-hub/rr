@@ -37,10 +37,11 @@ async function fetchRankings() {
   const cat = document.getElementById("filter-category").value;
   const fmt = document.getElementById("filter-format").value;
   const role = document.getElementById("filter-role").value;
-  const ret = document.getElementById("filter-retention").value;
+  const teamEl = document.getElementById("filter-team");
+  const team = teamEl ? teamEl.value : "all";
   const search = document.getElementById("filter-search").value.trim();
 
-  let url = `/api/rankings?category=${cat}&format_mode=${fmt}&role=${role}&retention=${ret}`;
+  let url = `/api/rankings?category=${cat}&format_mode=${fmt}&role=${role}&team=${encodeURIComponent(team)}`;
   if (search) url += `&search=${encodeURIComponent(search)}`;
 
   try {
@@ -67,7 +68,7 @@ function renderRankingsTable(cat, rows) {
     <th>Rank</th>
     <th>Player</th>
     <th>Role</th>
-    <th>RR Status</th>
+    <th>Current Franchise</th>
     <th>Pressure Balls</th>
     <th>${isBat ? "Pressure SR" : "Pressure Econ"}</th>
     <th>${isBat ? "SR Delta" : "Econ Delta"}</th>
@@ -82,9 +83,13 @@ function renderRankingsTable(cat, rows) {
 
   tbody.innerHTML = rows.map((r, i) => {
     const rankClass = r.rank === 1 ? "badge-rank-1" : (r.rank === 2 ? "badge-rank-2" : (r.rank === 3 ? "badge-rank-3" : ""));
-    const retBadge = r.retention_status === "Retain candidate"
-      ? `<span class="badge badge-retained">Retain Candidate</span>`
-      : `<span class="badge badge-target">Auction Target</span>`;
+    
+    let teamBadge = `<span class="badge badge-auction">🟢 Auction Target</span>`;
+    if (r.current_team === "Rajasthan Royals") {
+      teamBadge = `<span class="badge badge-rr">🩷 Rajasthan Royals</span>`;
+    } else if (r.current_team && r.current_team !== "Auction Pool") {
+      teamBadge = `<span class="badge badge-other-team">🔒 ${r.current_team}</span>`;
+    }
     
     const roleBadge = r.role === "Batter"
       ? `<span class="badge badge-role-batter">Batter</span>`
@@ -107,7 +112,7 @@ function renderRankingsTable(cat, rows) {
           <div style="font-size: 0.7rem; color: var(--text-muted);">ID: ${pId}</div>
         </td>
         <td>${roleBadge}</td>
-        <td>${retBadge}</td>
+        <td>${teamBadge}</td>
         <td><strong>${r.pressure_balls}</strong></td>
         <td>${rateVal}</td>
         <td>${deltaVal}</td>
@@ -468,11 +473,24 @@ function renderSquadGaps(data) {
 
   container.innerHTML = gaps.map((g) => {
     const statusColor = g.status === "Critical Gap" ? "var(--rr-red)" : (g.status === "Moderate Gap" ? "var(--rr-gold)" : "var(--rr-green)");
+    
+    // Genuine free agent auction targets
     const targetCards = (g.recommended_targets || []).map((t) => `
-      <div class="target-pill">
+      <div class="target-pill" style="border-left: 3px solid var(--rr-green);">
         <span style="color:#fff; font-weight:700;">${t.player_name} (${t.role})</span>
+        <span style="color:var(--rr-green); font-size:0.7rem;">• 🟢 Free Agent (Auction Pool)</span>
         <span style="color:var(--rr-gold); font-size:0.7rem;">• Score: ${t.score.toFixed(1)}</span>
         <span style="color:var(--text-muted); font-size:0.65rem;">• ${t.stat_line}</span>
+      </div>
+    `).join("");
+
+    // Franchise trade targets
+    const tradeCards = (g.potential_trade_targets || []).map((t) => `
+      <div class="target-pill" style="border-left: 3px solid #64748b;">
+        <span style="color:#fff; font-weight:700;">${t.player_name} (${t.role})</span>
+        <span style="color:#94a3b8; font-size:0.7rem;">• 🔒 Contracted to ${t.current_team}</span>
+        <span style="color:var(--rr-gold); font-size:0.7rem;">• Score: ${t.score.toFixed(1)}</span>
+        <span style="color:var(--text-muted); font-size:0.65rem;">• Trade Target</span>
       </div>
     `).join("");
 
@@ -494,8 +512,11 @@ function renderSquadGaps(data) {
           <span style="font-size:0.75rem; color:var(--text-muted); width:130px;">Benchmark: ${g.league_benchmark}</span>
         </div>
 
-        <div style="font-size:0.75rem; font-weight:700; color:var(--rr-cyan); margin-top:0.4rem;">Top Recommended Auction Targets:</div>
+        <div style="font-size:0.75rem; font-weight:700; color:var(--rr-green); margin-top:0.6rem;">🟢 Top Free-Agent Auction Targets (To Buy at Auction):</div>
         <div class="target-pill-group">${targetCards}</div>
+
+        <div style="font-size:0.72rem; font-weight:600; color:#94a3b8; margin-top:0.4rem;">🔒 Franchise Trade Targets (Requires Intra-Team Transfer):</div>
+        <div class="target-pill-group">${tradeCards}</div>
       </div>
     `;
   }).join("");
