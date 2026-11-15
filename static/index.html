@@ -74,11 +74,12 @@
           </div>
 
           <div class="filter-group">
-            <span class="filter-label">RR Status:</span>
+            <span class="filter-label">Market Status:</span>
             <select id="filter-retention" onchange="fetchRankings()">
-              <option value="all">All Players</option>
-              <option value="Retain candidate">Retain Candidate</option>
-              <option value="Auction target">Auction Target</option>
+              <option value="all">All Players (Unstop Benchmark)</option>
+              <option value="Auction target">Available Auction Targets (Excl. Retained)</option>
+              <option value="Retained (RR)">RR Retained Core</option>
+              <option value="Retained (Other Team)">Retained by Other Teams (Locked)</option>
             </select>
           </div>
 

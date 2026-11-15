@@ -189,7 +189,44 @@ def run_full_pipeline(
     top10_bowlers.rename(columns={"bowler_id": "player_id", "bowler_name_clean": "player_name"}, inplace=True)
     top10_bowlers.to_csv(os.path.join(outputs_dir, "top10_bowlers.csv"), index=False)
 
-    # 3. Full Ratings
+    # 3. Available Auction Targets (Excluding players retained by ANY franchise)
+    all_retained = squad_engine.get_all_retained_ids()
+    avail_batters = batters_combined[~batters_combined["striker_id"].isin(all_retained)].copy()
+    avail_batters["auction_rank"] = range(1, len(avail_batters) + 1)
+    top10_avail_batters = avail_batters.head(10)[["auction_rank", "striker_id", "striker_name_clean", "role", "pressure_balls", "pressure_sr", "sr_delta", "reliability_score"]].copy()
+    top10_avail_batters.rename(columns={"auction_rank": "rank", "striker_id": "player_id", "striker_name_clean": "player_name"}, inplace=True)
+    top10_avail_batters.to_csv(os.path.join(outputs_dir, "top10_auction_targets_batters.csv"), index=False)
+
+    avail_bowlers = bowlers_combined[~bowlers_combined["bowler_id"].isin(all_retained)].copy()
+    avail_bowlers["auction_rank"] = range(1, len(avail_bowlers) + 1)
+    top10_avail_bowlers = avail_bowlers.head(10)[["auction_rank", "bowler_id", "bowler_name_clean", "role", "pressure_balls", "pressure_econ", "econ_delta", "reliability_score"]].copy()
+    top10_avail_bowlers.rename(columns={"auction_rank": "rank", "bowler_id": "player_id", "bowler_name_clean": "player_name"}, inplace=True)
+    top10_avail_bowlers.to_csv(os.path.join(outputs_dir, "top10_auction_targets_bowlers.csv"), index=False)
+
+    # 4. Uncapped Domestic Gems (Indian players with zero international T20I caps)
+    comps = pd.read_csv("Data Pack/competitions.csv")
+    teams = pd.read_csv("Data Pack/teams.csv")
+    mapping = pd.read_csv("Data Pack/competition_team_player_mapping.csv")
+    t20i_comps = comps[comps["match_format"] == "T20I"]["comp_id"].unique()
+    t20i_teams = set(teams[teams["comp_id"].isin(t20i_comps)]["team_id"].unique())
+    intl_players = set(mapping[mapping["team_id"].isin(t20i_teams)]["player_id"].unique())
+
+    uncapped_bat = avail_batters[~avail_batters["striker_id"].isin(intl_players)].head(5).copy()
+    uncapped_bat_export = uncapped_bat[["striker_id", "striker_name_clean", "role", "pressure_balls", "pressure_sr", "reliability_score"]].rename(
+        columns={"striker_id": "player_id", "striker_name_clean": "player_name"}
+    )
+    uncapped_bat_export["type"] = "Batter"
+
+    uncapped_bowl = avail_bowlers[~avail_bowlers["bowler_id"].isin(intl_players)].head(5).copy()
+    uncapped_bowl_export = uncapped_bowl[["bowler_id", "bowler_name_clean", "role", "pressure_balls", "pressure_econ", "reliability_score"]].rename(
+        columns={"bowler_id": "player_id", "bowler_name_clean": "player_name", "pressure_econ": "pressure_metric"}
+    )
+    uncapped_bat_export.rename(columns={"pressure_sr": "pressure_metric"}, inplace=True)
+    uncapped_bowl_export["type"] = "Bowler"
+    uncapped_gems = pd.concat([uncapped_bat_export, uncapped_bowl_export], ignore_index=True)
+    uncapped_gems.to_csv(os.path.join(outputs_dir, "top10_uncapped_gems.csv"), index=False)
+
+    # 5. Full Ratings
     batters_all = batters_combined.copy()
     batters_all["category"] = "Batter"
     batters_all.rename(columns={"striker_id": "player_id", "striker_name_clean": "player_name"}, inplace=True)
@@ -213,6 +250,14 @@ def run_full_pipeline(
     print("FINAL OFFICIAL TOP 10 BOWLERS UNDER PRESSURE (Round 1 Submission):")
     print("=" * 70)
     print(top10_bowlers[["rank", "player_id", "player_name", "role", "pressure_balls", "pressure_econ", "econ_delta", "reliability_score"]].to_string(index=False))
+
+    print("\n" + "=" * 70)
+    print("TOP 10 AVAILABLE AUCTION TARGETS FOR RAJASTHAN ROYALS (Excluding Retained):")
+    print("=" * 70)
+    print("BATTERS:")
+    print(top10_avail_batters[["rank", "player_id", "player_name", "role", "pressure_balls", "pressure_sr", "reliability_score"]].to_string(index=False))
+    print("\nBOWLERS:")
+    print(top10_avail_bowlers[["rank", "player_id", "player_name", "role", "pressure_balls", "pressure_econ", "reliability_score"]].to_string(index=False))
     print("=" * 70)
 
 

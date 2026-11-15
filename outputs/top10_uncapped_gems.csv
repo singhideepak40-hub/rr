@@ -1,0 +1,11 @@
+player_id,player_name,role,pressure_balls,pressure_metric,reliability_score,type
+8101,Ashutosh Sharma,Batter,190,192.10526315789474,82.96,Batter
+4246,Nitish Rana,Batter,193,200.0,79.8,Batter
+7059,Nehal Wadhera,Batter,172,175.58139534883722,78.39,Batter
+4821,Mahipal Lomror,Batter,133,175.93984962406014,76.4,Batter
+6314,Devdutt Padikkal,Batter,161,200.62111801242236,75.98,Batter
+4219,Krunal Pandya,All-Rounder,246,9.463414634146341,68.22,Bowler
+7327,Rasikh Salam,Bowler,154,9.428571428571429,66.97,Bowler
+6161,Rahul Chahar,Bowler,219,10.383561643835616,59.65,Bowler
+8530,Kartik Tyagi,Bowler,147,10.36734693877551,57.28,Bowler
+4265,T Natarajan,Bowler,423,11.00709219858156,57.0,Bowler
