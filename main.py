@@ -31,49 +31,53 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ARTIFACTS_DIR = os.path.join(BASE_DIR, "artifacts")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
+
 # Global in-memory caches
 DATA_CACHE = {}
 
 
 def load_app_cache():
     """Load precomputed parquet artifacts into memory for instant API responses (<50ms)."""
-    artifacts_dir = "artifacts"
-    if not os.path.exists(os.path.join(artifacts_dir, "deliveries_pressure.parquet")):
+    if not os.path.exists(os.path.join(ARTIFACTS_DIR, "deliveries_pressure.parquet")):
         # If pipeline not yet run, run it
         from run_pipeline import run_full_pipeline
         run_full_pipeline()
 
-    DATA_CACHE["deliveries"] = pd.read_parquet(os.path.join(artifacts_dir, "deliveries_pressure.parquet"))
-    DATA_CACHE["batters_combined"] = pd.read_parquet(os.path.join(artifacts_dir, "ratings_batters_combined.parquet"))
-    DATA_CACHE["bowlers_combined"] = pd.read_parquet(os.path.join(artifacts_dir, "ratings_bowlers_combined.parquet"))
+    DATA_CACHE["deliveries"] = pd.read_parquet(os.path.join(ARTIFACTS_DIR, "deliveries_pressure.parquet"))
+    DATA_CACHE["batters_combined"] = pd.read_parquet(os.path.join(ARTIFACTS_DIR, "ratings_batters_combined.parquet"))
+    DATA_CACHE["bowlers_combined"] = pd.read_parquet(os.path.join(ARTIFACTS_DIR, "ratings_bowlers_combined.parquet"))
 
     for fmt in ["ipl", "t20i"]:
-        p_bat = os.path.join(artifacts_dir, f"ratings_batters_{fmt}.parquet")
-        p_bw = os.path.join(artifacts_dir, f"ratings_bowlers_{fmt}.parquet")
+        p_bat = os.path.join(ARTIFACTS_DIR, f"ratings_batters_{fmt}.parquet")
+        p_bw = os.path.join(ARTIFACTS_DIR, f"ratings_bowlers_{fmt}.parquet")
         if os.path.exists(p_bat):
             DATA_CACHE[f"batters_{fmt}"] = pd.read_parquet(p_bat)
         if os.path.exists(p_bw):
             DATA_CACHE[f"bowlers_{fmt}"] = pd.read_parquet(p_bw)
 
-    with open(os.path.join(artifacts_dir, "data_quality_report.json"), "r") as f:
+    with open(os.path.join(ARTIFACTS_DIR, "data_quality_report.json"), "r") as f:
         DATA_CACHE["data_quality"] = json.load(f)
 
-    with open(os.path.join(artifacts_dir, "validation_summary.json"), "r") as f:
+    with open(os.path.join(ARTIFACTS_DIR, "validation_summary.json"), "r") as f:
         DATA_CACHE["validation"] = json.load(f)
 
-    with open(os.path.join(artifacts_dir, "squad_gaps.json"), "r") as f:
+    with open(os.path.join(ARTIFACTS_DIR, "squad_gaps.json"), "r") as f:
         DATA_CACHE["squad_gaps"] = json.load(f)
 
     DATA_CACHE["insights_engine"] = InsightsEngine(DATA_CACHE["deliveries"])
-    DATA_CACHE["squad_engine"] = SquadFitEngine("rr_squad.json")
+    DATA_CACHE["squad_engine"] = SquadFitEngine(os.path.join(BASE_DIR, "rr_squad.json"))
     print("Application in-memory artifacts loaded successfully!")
 
 
 # Mount static and outputs
-os.makedirs("static", exist_ok=True)
-os.makedirs("outputs", exist_ok=True)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("/outputs", StaticFiles(directory="outputs"), name="outputs")
+os.makedirs(STATIC_DIR, exist_ok=True)
+os.makedirs(OUTPUTS_DIR, exist_ok=True)
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+app.mount("/outputs", StaticFiles(directory=OUTPUTS_DIR), name="outputs")
 
 
 @app.on_event("startup")
@@ -81,10 +85,18 @@ def startup_event():
     load_app_cache()
 
 
+# If running in serverless where startup event might not trigger before first request
+if not DATA_CACHE:
+    try:
+        load_app_cache()
+    except Exception as _e:
+        print("Note: Cache will load on startup event:", _e)
+
+
 @app.get("/")
 def serve_index():
     """Serve the single-page application dashboard."""
-    index_path = os.path.join("static", "index.html")
+    index_path = os.path.join(STATIC_DIR, "index.html")
     if os.path.exists(index_path):
         return FileResponse(index_path)
     return {"message": "SuperRR Selector API running. Dashboard UI template not yet written."}
