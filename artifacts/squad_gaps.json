@@ -74,28 +74,28 @@
       "status": "Critical Gap",
       "recommended_targets": [
         {
-          "player_id": 2382,
-          "player_name": "Jamie Overton",
+          "player_id": 2933,
+          "player_name": "Jasprit Bumrah",
+          "role": "Bowler",
+          "score": 74.54,
+          "stat_line": "Pressure Econ: 8.22 (Delta: +1.73)",
+          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
+        },
+        {
+          "player_id": 781,
+          "player_name": "Sunil Narine",
           "role": "All-Rounder",
-          "score": 69.76,
-          "stat_line": "Pressure Econ: 8.75 (Delta: +0.56)",
-          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; available auction target solving RR vulnerability."
+          "score": 73.26,
+          "stat_line": "Pressure Econ: 8.29 (Delta: +1.77)",
+          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
         },
         {
-          "player_id": 4373,
-          "player_name": "Mustafizur Rahman",
+          "player_id": 3644,
+          "player_name": "Kuldeep Yadav",
           "role": "Bowler",
-          "score": 69.07,
-          "stat_line": "Pressure Econ: 8.76 (Delta: +1.91)",
-          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; available auction target solving RR vulnerability."
-        },
-        {
-          "player_id": 7920,
-          "player_name": "Nathan Ellis",
-          "role": "Bowler",
-          "score": 68.33,
-          "stat_line": "Pressure Econ: 8.89 (Delta: +1.44)",
-          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; available auction target solving RR vulnerability."
+          "score": 71.19,
+          "stat_line": "Pressure Econ: 8.84 (Delta: +1.30)",
+          "fit_rationale": "Provides proven Death Bowling Lockdown (Overs 16-20) control; solves RR vulnerability."
         }
       ]
     },
@@ -115,23 +115,23 @@
           "role": "Batter",
           "score": 87.54,
           "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
-          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; available auction target to fill RR deficit."
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR tactical deficit."
         },
         {
-          "player_id": 3647,
-          "player_name": "Shreyas Iyer",
+          "player_id": 6288,
+          "player_name": "Shubman Gill",
           "role": "Batter",
-          "score": 85.77,
-          "stat_line": "Pressure SR: 208.4 (Delta: +71.3)",
-          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; available auction target to fill RR deficit."
+          "score": 87.38,
+          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR tactical deficit."
         },
         {
-          "player_id": 4853,
-          "player_name": "Glenn Phillips",
+          "player_id": 1699,
+          "player_name": "Suryakumar Yadav",
           "role": "Batter",
-          "score": 85.35,
-          "stat_line": "Pressure SR: 203.3 (Delta: +79.9)",
-          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; available auction target to fill RR deficit."
+          "score": 86.98,
+          "stat_line": "Pressure SR: 234.5 (Delta: +88.6)",
+          "fit_rationale": "Supplies elite Top Order Crisis Resilience (Powerplay 1-6) execution; fills RR tactical deficit."
         }
       ]
     },
@@ -151,23 +151,23 @@
           "role": "Batter",
           "score": 87.54,
           "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
-          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; available auction target to fill RR deficit."
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR tactical deficit."
         },
         {
-          "player_id": 3647,
-          "player_name": "Shreyas Iyer",
+          "player_id": 6288,
+          "player_name": "Shubman Gill",
           "role": "Batter",
-          "score": 85.77,
-          "stat_line": "Pressure SR: 208.4 (Delta: +71.3)",
-          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; available auction target to fill RR deficit."
+          "score": 87.38,
+          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR tactical deficit."
         },
         {
-          "player_id": 4853,
-          "player_name": "Glenn Phillips",
+          "player_id": 1699,
+          "player_name": "Suryakumar Yadav",
           "role": "Batter",
-          "score": 85.35,
-          "stat_line": "Pressure SR: 203.3 (Delta: +79.9)",
-          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; available auction target to fill RR deficit."
+          "score": 86.98,
+          "stat_line": "Pressure SR: 234.5 (Delta: +88.6)",
+          "fit_rationale": "Supplies elite Death Overs Chase Finishing (Overs 16-20) execution; fills RR tactical deficit."
         }
       ]
     },
@@ -187,23 +187,23 @@
           "role": "Batter",
           "score": 87.54,
           "stat_line": "Pressure SR: 202.3 (Delta: +50.1)",
-          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; available auction target to fill RR deficit."
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR tactical deficit."
         },
         {
-          "player_id": 3647,
-          "player_name": "Shreyas Iyer",
+          "player_id": 6288,
+          "player_name": "Shubman Gill",
           "role": "Batter",
-          "score": 85.77,
-          "stat_line": "Pressure SR: 208.4 (Delta: +71.3)",
-          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; available auction target to fill RR deficit."
+          "score": 87.38,
+          "stat_line": "Pressure SR: 230.8 (Delta: +93.5)",
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR tactical deficit."
         },
         {
-          "player_id": 4853,
-          "player_name": "Glenn Phillips",
+          "player_id": 1699,
+          "player_name": "Suryakumar Yadav",
           "role": "Batter",
-          "score": 85.35,
-          "stat_line": "Pressure SR: 203.3 (Delta: +79.9)",
-          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; available auction target to fill RR deficit."
+          "score": 86.98,
+          "stat_line": "Pressure SR: 234.5 (Delta: +88.6)",
+          "fit_rationale": "Supplies elite Middle Overs Spin Counter-Attack (Overs 7-15 vs Spin) execution; fills RR tactical deficit."
         }
       ]
     },
@@ -218,28 +218,28 @@
       "status": "Strong Asset",
       "recommended_targets": [
         {
-          "player_id": 2382,
-          "player_name": "Jamie Overton",
+          "player_id": 2933,
+          "player_name": "Jasprit Bumrah",
+          "role": "Bowler",
+          "score": 74.54,
+          "stat_line": "Pressure Econ: 8.22 (Delta: +1.73)",
+          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
+        },
+        {
+          "player_id": 781,
+          "player_name": "Sunil Narine",
           "role": "All-Rounder",
-          "score": 69.76,
-          "stat_line": "Pressure Econ: 8.75 (Delta: +0.56)",
-          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; available auction target solving RR vulnerability."
+          "score": 73.26,
+          "stat_line": "Pressure Econ: 8.29 (Delta: +1.77)",
+          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
         },
         {
-          "player_id": 4373,
-          "player_name": "Mustafizur Rahman",
+          "player_id": 3644,
+          "player_name": "Kuldeep Yadav",
           "role": "Bowler",
-          "score": 69.07,
-          "stat_line": "Pressure Econ: 8.76 (Delta: +1.91)",
-          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; available auction target solving RR vulnerability."
-        },
-        {
-          "player_id": 7920,
-          "player_name": "Nathan Ellis",
-          "role": "Bowler",
-          "score": 68.33,
-          "stat_line": "Pressure Econ: 8.89 (Delta: +1.44)",
-          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; available auction target solving RR vulnerability."
+          "score": 71.19,
+          "stat_line": "Pressure Econ: 8.84 (Delta: +1.30)",
+          "fit_rationale": "Provides proven Powerplay Strike Pacing (Overs 1-6) control; solves RR vulnerability."
         }
       ]
     }
